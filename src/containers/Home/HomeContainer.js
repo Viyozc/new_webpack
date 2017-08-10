@@ -94,7 +94,7 @@ export default class HomeContainer extends React.Component {
                     <Special />
                 </div>
                 <div>
-                    <p className="style_p">1s书籍列表</p>
+                    <p className="style_p">书籍列表</p>
                     {
                         !isEmpty(bookDetails) &&
                         bookDetails.map((ele, index) => {
