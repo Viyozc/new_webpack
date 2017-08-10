@@ -11,7 +11,7 @@ import PropTypes from 'prop-types';
 /*actions*/
 import * as homeActions from 'actions/home';
 import * as globalActions from 'actions/global'
-
+import Style from './styles/home.less'
 /*component*/
 import { Header } from 'components/Home/Header';
 import { Nav } from 'components/Home/Nav';
@@ -41,7 +41,9 @@ export default class HomeContainer extends React.Component {
         //例子：this.myfunction = this.myfunction.bind(this)
         this.handleClick = this.handleClick.bind(this)
     }
-
+    componentWillMount () {
+        Style.use()
+    }
     componentWillMount() {
         const { navMain, bookDetails } = this.props.home
         if (navMain.length === 0) {
@@ -94,7 +96,7 @@ export default class HomeContainer extends React.Component {
                     <Special />
                 </div>
                 <div>
-                    <p className="style_p">书籍列表</p>
+                    <p className="style_p">1s书籍列表</p>
                     {
                         !isEmpty(bookDetails) &&
                         bookDetails.map((ele, index) => {

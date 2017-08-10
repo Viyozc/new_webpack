@@ -4,6 +4,11 @@ var autoprefixer = require('autoprefixer')
 var ExtractTextPlugin = require('extract-text-webpack-plugin')
 var argv = require('yargs').argv
 
+const HappyPack = require('happypack')
+const os = require('os')
+const ip = require('ip').address()
+// const happyThreadPool = HappyPack.ThreadPool({ size: os.cpus().length })
+
 // 判断当前运行环境是开发模式还是生产模式
 const nodeEnv = process.env.NODE_ENV || 'development'
 const isPro = nodeEnv === 'production'
@@ -49,7 +54,25 @@ module.exports = {
     }),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NamedModulesPlugin(),
-    new webpack.NoEmitOnErrorsPlugin()
+    new webpack.NoEmitOnErrorsPlugin(),
+     new HappyPack({
+      id: 'happybabel',
+      loaders: [{
+        loader: 'babel-loader?cacheDirectory=true',
+        options: {
+          presets: ['react', 'env'],
+          plugins: [
+            ['transform-object-rest-spread'],
+            ['transform-runtime', {
+              polyfill: false,
+              regenerator: true
+            }]
+          ]
+        }
+      }],
+      threadPool: HappyPack.ThreadPool({ size: os.cpus().length }),
+      verbose: true
+    }),
   ],
     // alias是配置全局的路径入口名称，只要涉及到下面配置的文件路径，可以直接用定义的单个字母表示整个路径
   resolve: {
@@ -71,10 +94,11 @@ module.exports = {
     rules: [
       {
         test: /\.js$/,
-        exclude: /(node_modules|bower_components)/,
-        use: {
-          loader: 'babel-loader?cacheDirectory=true'
-        }
+        exclude: /(node_modules)/,
+        // use: {
+        //   loader: 'babel-loader?cacheDirectory=true'
+        // }
+         use: ['happypack/loader?id=happybabel']
       },
       // {
       //   test: /\.(less|css)$/,
@@ -82,10 +106,16 @@ module.exports = {
       //     use: ['css-loader', 'less-loader', 'postcss-loader']
       //   })
       // },
-      // { test: /\.css$/, loader: 'style/useable!css' },
-      // { test: /\.less$/, loader: 'style/useable!css!less' },
-      { test: /\.css$/, loader: 'css-loader!postcss-loader' },
-      { test: /\.less$/, loader: 'css-loader!less-loader' },
+      {
+        test: /\.css$/,
+        use: ['style-loader/useable', 'css-loader']
+      },
+      {
+        test: /\.less$/,
+        use: ['style-loader/useable', 'css-loader', 'less-loader']
+      },
+      // { test: /\.css$/, loader: 'css-loader!postcss-loader' },
+      // { test: /\.less$/, loader: 'css-loader!less-loader' },
       {
         test: /\.(png|jpg|gif|svg|eot|ttf|woff|woff2)$/,
         use: ['url-loader?limit=1000&name=files/[md5:hash:base64:10].[ext]']

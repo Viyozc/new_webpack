@@ -10,6 +10,7 @@ import PropTypes from 'prop-types';
 import * as searchActions from 'actions/search';
 import * as globalActions from 'actions/global';
 
+import Style from './styles/search.less'
 import { Header } from 'components/Search/Header';
 import { HotSearch } from 'components/Search/HotSearch';
 
@@ -29,6 +30,7 @@ export default class SearchContainer extends React.Component {
     }
 
     componentWillMount() {
+        Style.use()
         console.log('进入搜索页面')
         this.props.receiveHotSearch()
     }

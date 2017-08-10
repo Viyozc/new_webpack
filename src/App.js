@@ -18,7 +18,8 @@ import * as globalActions from 'actions/global'
 import { asyncComponent } from './AsyncComponent'
 
 import homeContainer from 'containers/Home/HomeContainer'
-
+import Style from './app.less'
+import home from 'containers/Home/styles/home.less'
 const Search = asyncComponent(() => import(/* webpackChunkName: "search" */ "./containers/Search/SearchContainer"))
 const BookList = asyncComponent(() => import(/* webpackChunkName: "bookList" */ "./containers/BookList/BookListContainer"))
 
@@ -27,7 +28,10 @@ const BookList = asyncComponent(() => import(/* webpackChunkName: "bookList" */ 
     dispatch => bindActionCreators(globalActions, dispatch)
 )
 export default class App extends React.Component {
-
+    componentWillMount () {
+        Style.use()
+        home.use()
+    }
     componentDidMount() {
         window.addEventListener('hashchange', () => {
             this.props.currentAnimate('normal')
