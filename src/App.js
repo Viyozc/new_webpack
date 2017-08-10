@@ -30,7 +30,7 @@ export default class App extends React.Component {
 
     componentDidMount() {
         window.addEventListener('hashchange', () => {
-           this.props.currentAnimate('normal')
+            this.props.currentAnimate('normal')
         })
     }
     

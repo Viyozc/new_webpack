@@ -4,8 +4,10 @@
   "description": "",
   "scripts": {
     "start": "webpack-dev-server",
+    "dev": "webpack-dev-server --config webpack.dev.config.js --progress",
     "lint": "eslint src",
     "build-mac": "export NODE_ENV=production && webpack --progress --hide-modules --config webpack.config.js",
+    "build": "export NODE_ENV=production && webpack --progress --hide-modules --config webpack.pro.config.js",
     "build-win": "set NODE_ENV=production&& webpack --progress --hide-modules --config webpack.config.js",
     "test": "jest"
   },

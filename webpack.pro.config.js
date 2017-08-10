@@ -9,60 +9,46 @@ const nodeEnv = process.env.NODE_ENV || 'development'
 const isPro = nodeEnv === 'production'
 
 console.log('当前运行环境：', isPro ? 'production' : 'development')
-
-var plugins = [
-  new ExtractTextPlugin('styles.css'),
-    // new webpack.optimize.ModuleConcatenationPlugin(),
-  new webpack.optimize.CommonsChunkPlugin({
-    name: 'vendor',
-    minChunks: function (module) {
-            // 该配置假定你引入的 vendor 存在于 node_modules 目录中
-      return module.context && module.context.indexOf('node_modules') !== -1
-    }
-  }),
-  new webpack.DefinePlugin({
-        // 定义全局变量
-    'process.env': {
-      'NODE_ENV': JSON.stringify(nodeEnv)
-    }
-  })
-]
-var app = ['./entry']
-if (isPro) {
-  plugins.push(
-      new webpack.LoaderOptionsPlugin({
-        minimize: true,
-        debug: false
-      }),
-      new webpack.optimize.UglifyJsPlugin({
-        sourceMap: true,
-        comments: false,
-        ie8: true
-      })
-  )
-} else {
-  app.unshift('react-hot-loader/patch', 'webpack-dev-server/client?http://localhost:3011', 'webpack/hot/only-dev-server')
-  plugins.push(
-        new webpack.HotModuleReplacementPlugin(),
-        new webpack.NamedModulesPlugin(),
-        new webpack.NoEmitOnErrorsPlugin()
-  )
-}
-
 module.exports = {
   context: path.resolve(__dirname, 'src'),
   devtool: isPro ? 'source-map' : 'inline-source-map',
   entry: {
-    app: app
+    main: './entry'
   },
   output: {
-    filename: '[name].js',
+    filename: '[name]_[hash].js',
     path: path.join(__dirname, 'build'),
     publicPath: isPro ? './build/' : '/build/',
-    chunkFilename: '[name].js'
+    chunkFilename: '[name]-[hash].js'
   },
     // BASE_URL是全局的api接口访问地址
-  plugins,
+  plugins: [
+    new ExtractTextPlugin('styles.css'),
+    // new webpack.optimize.ModuleConcatenationPlugin(),
+    new webpack.optimize.CommonsChunkPlugin({
+      name: 'vendor',
+      minChunks: function (module) {
+            // 该配置假定你引入的 vendor 存在于 node_modules 目录中
+        return module.context && module.context.indexOf('node_modules') !== -1
+      }
+    }),
+    new webpack.DefinePlugin({
+        // 定义全局变量
+      'process.env': {
+        'NODE_ENV': JSON.stringify(nodeEnv)
+      }
+    }),
+    new webpack.LoaderOptionsPlugin({
+      minimize: true,
+      debug: false,
+      console: false
+    }),
+    new webpack.optimize.UglifyJsPlugin({
+      sourceMap: true,
+      comments: false,
+      ie8: true
+    })
+  ],
     // alias是配置全局的路径入口名称，只要涉及到下面配置的文件路径，可以直接用定义的单个字母表示整个路径
   resolve: {
     extensions: ['.js', '.jsx', '.less', '.scss', '.css'],

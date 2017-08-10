@@ -90,11 +90,11 @@ export default class HomeContainer extends React.Component {
                     </ul>
                 </div>
                 <div>
-                    <p className="style_p">专题</p>
+                    <p className="style_p">专题22</p>
                     <Special />
                 </div>
                 <div>
-                    <p className="style_p">书籍列表</p>
+                    <p className="style_p">1s书籍列表</p>
                     {
                         !isEmpty(bookDetails) &&
                         bookDetails.map((ele, index) => {
