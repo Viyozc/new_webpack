@@ -1,0 +1,88 @@
+.cancel-sign {
+  padding-top: 15px;
+  .chose-reason {
+    width: 100%;
+    .line {
+      width: 100%;
+      background: #fff;
+      box-sizing: border-box;
+      padding: 15px;
+      font-size: 0;
+      .txt {
+        text-align: left;
+        width: 50%;
+        color: #4E4E4C;
+        font-size: 16px;
+        display: inline-block;
+        vertical-align: middle;
+      }
+      .point {
+        width: 50%;
+        text-align: right;
+        display: inline-block;
+        vertical-align: middle;
+        font-size: 0;
+        .circle-out {
+          box-sizing: border-box;
+          width: 20px;
+          height: 20px;
+          display: inline-block;
+          border-radius: 100%;
+          position: relative;
+          .circle-inside {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            left: 3px;
+            top:3px;
+          }
+        }
+
+      }
+    }
+    .line.normal {
+      .circle-out {
+        border: 1px solid #BDBDBD;
+        .circle-inside {
+          background: none;
+        }
+      }
+    }
+    .line.active {
+      .circle-out {
+        border: 2px solid #26C541;
+        .circle-inside {
+          display: inline-block;
+          border-radius: 100%;
+          background: #26C541;
+        }
+      }
+    }
+    .line:last-child {
+      margin-top: 15px;
+      .write-reason {
+        font-size: 14px;
+        width: 100%;
+        min-height: 80px;
+      }
+    }
+  }
+  .btns {
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    padding: 15px;
+    box-sizing: border-box;
+    text-align: center;
+    .btn-save {
+      background: #26C541;
+      color: #fff;
+      font-size: 18px;
+      height: 50px;
+      display: inline-block;
+      border-radius: 5px;
+      width: 100%;
+    }
+  }
+}

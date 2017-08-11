@@ -46,7 +46,10 @@ module.exports = {
     new webpack.optimize.UglifyJsPlugin({
       sourceMap: true,
       comments: false,
-      ie8: true
+      ie8: true,
+      mangle: {
+      except: ['$', 'exports', 'require']
+    }
     })
   ],
     // alias是配置全局的路径入口名称，只要涉及到下面配置的文件路径，可以直接用定义的单个字母表示整个路径

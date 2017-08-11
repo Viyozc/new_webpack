@@ -1,0 +1,99 @@
+.modal-background {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 2;
+  .select-level3 {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #FFFFFF;
+    .head {
+      height: 48px;
+      background-color: #F7F7F7;
+      position: relative;
+      border-bottom: 1px solid #e8e8e8;
+      button {
+        line-height: 48px;
+        color: #909090;
+        font-size: 18px;
+        position: absolute;
+        outline: none;
+        border: none;
+        background: none;
+      }
+      .cancel-button {
+        left: 10px;
+      }
+      .ok-button {
+        right: 10px;
+      }
+    }
+    .content {
+      .left {
+        width: 33.3333%;
+        float: left;
+        box-sizing: border-box;
+        border-right: 1px solid #F5F5F5;
+        height: 220px;
+        overflow-y: scroll;
+        -webkit-overflow-scrolling: touch;
+      }
+      .center {
+        width: 33.3333%;
+        float: left;
+        box-sizing: border-box;
+        border-right: 1px solid #F5F5F5;
+        height: 220px;
+        overflow-y: scroll;
+        -webkit-overflow-scrolling: touch;
+      }
+      .right {
+        width: 33.3333%;
+        float: right;
+        height: 220px;
+        overflow-y: scroll;
+        -webkit-overflow-scrolling: touch;
+      }
+      .left, .center, .right {
+        li {
+          position: relative;
+          width: 100%;
+          text-align: center;
+          height: 50px;
+          line-height: 50px;
+          color: #4E4E4C;
+          font-size: 14px;
+          background-color: #FFFFFF;
+          border-bottom: 1px solid #F5F5F9;
+          i.icon-gou {
+            font-size: 20px;
+          }
+          .line-num {
+            position: absolute;
+            height: 50px;
+            line-height: 50px;
+            right: 5px;
+            top: 0;
+            color: #909090;
+            font-size: 12px;
+          }
+        }
+        li:last-child {
+          border-bottom: none;
+        }
+        li.active {
+          background-color: #F5F5F5;
+        }
+        li:first-child {
+          color: #26C541;
+        }
+      }
+    }
+  }
+}

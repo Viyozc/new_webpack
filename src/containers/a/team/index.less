@@ -1,0 +1,151 @@
+.agent-team {
+  width: 100%;
+  padding-bottom: 80px;
+  .headbts {
+    line-height: 3em;
+    display: flex;
+    justify-content: space-around;
+    button {
+      padding: 1em 2em;
+    }
+    .active {
+      border-bottom: 2px solid #00BC31;
+    }
+  }
+  .table {
+    width: 100%;
+    .tr {
+      box-sizing: border-box;
+      width: 100%;
+      font-size: 0;
+      .name, .order-no, .probability, .shop-no, .install-no, .recovery-no {
+        height: 100%;
+        font-size: 12px;
+        display: inline-block;
+        vertical-align: middle;
+        text-align: center;
+        line-height: 130%;
+        box-sizing: border-box;
+        .txt.active {
+          color: #FF6600;
+        }
+      }
+      .order-no, .probability, .shop-no, .install-no, .recovery-no {
+        padding: 0 10px 0 0;
+        position: relative;
+        .arrow {
+          position: absolute;
+        }
+        .arrow.up.active {
+          border-bottom: 4px solid #FF6600;
+        }
+        .arrow.down.active {
+          border-top: 4px solid #FF6600;
+        }
+        .arrow.up {
+          right: 3px;
+          top: 50%;
+          width: 0;
+          margin-top: -4px;
+          height: 0;
+          border-left: 4px solid transparent;
+          border-right: 4px solid transparent;
+          border-bottom: 4px solid #767676;
+        }
+        .arrow.down {
+          right: 3px;
+          top: 50%;
+          margin-top: 3px;
+          width: 0;
+          height: 0;
+          border-left: 4px solid transparent;
+          border-right: 4px solid transparent;
+          border-top: 4px solid #767676;
+
+        }
+      }
+      .name {
+        width: 12.5%;
+      }
+      .order-no {
+        width: 17.5%;
+      }
+      .probability {
+        width: 17.5%;
+      }
+      .shop-no {
+        width: 17.5%;
+      }
+      .install-no {
+        width: 17.5%;
+      }
+      .recovery-no {
+        width: 17.5%;
+      }
+    }
+    .tr.head {
+      height: auto;
+      line-height: 70px;
+      min-height: 70px;
+      background: #E7E7E7;
+      .name, .order-no, .probability, .shop-no, .install-no, .recovery-no {
+        color: #767676;
+      }
+    }
+    .tr.line {
+      line-height: 50px;
+      height: auto;
+      min-height: 50px;
+      .name, .order-no, .probability, .shop-no, .install-no, .recovery-no {
+        color: #1A1A1A;
+        .icon-xiayibu {
+          color: #BDBDBD;
+          font-size: 11px;
+          position: absolute;
+          right: 4px;
+          top: 0;
+        }
+      }
+      .recovery-no {
+        padding-right: 14px;
+      }
+    }
+    .tr.line.even {
+      background: #fff;
+    }
+    .tr.line.odd {
+      background: #F5F5F5;
+    }
+    .dimission {
+      font-size: 1em;
+      display: flex;
+      .nickName {
+        flex-grow: 1
+      }
+      span {
+        padding: 0 1em;
+      }
+    }
+    .icon-font-style {
+      font-size: 11px;
+      color: #BDBDBD;
+      padding-right: 4px;
+    }
+  }
+  .btn-wap {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    .btn-add {
+      display: block;
+      color: #fff;
+      font-size: 16px;
+      background: #3DCF55;
+      width: 100%;
+      text-align: center;
+      height: 50px;
+      line-height: 50px;
+    }
+  }
+}

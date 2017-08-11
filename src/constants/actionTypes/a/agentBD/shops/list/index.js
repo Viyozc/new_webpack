@@ -1,0 +1,2 @@
+export const SHOP_GET_LIST = 'SHOP_GET_LIST'
+export const SHOP_CLEAN_LIST = 'SHOP_CLEAN_LIST'

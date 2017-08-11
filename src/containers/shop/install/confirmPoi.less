@@ -1,0 +1,60 @@
+.map {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  @keyframes blink {
+    from {background: rgba(59,141,255,0.35);}
+    to {background: rgba(59,141,255,0);}
+  }
+
+  @-webkit-keyframes blink /*Safari and Chrome*/ {
+    from {background: rgba(59,141,255,0.35);}
+    to {background: rgba(59,141,255,0);}
+  }
+  .located-point {
+    background: rgba(59,141,255,0.35);
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    position: absolute;
+    text-align: center;
+    animation: blink 1s infinite;
+    -webkit-animation: blink 1s infinite;
+    animation-direction: alternate;
+    -webkit-animation-direction: alternate;
+    z-index: 1;
+    left: 50%;
+    top: 50%;
+    margin-left: -15px;
+    margin-top: -15px;
+    div {
+      width: 20px;
+      height: 20px;
+      box-sizing: border-box;
+      border: 2px solid #FFF;
+      background: #3B8DFF;
+      border-radius: 50%;
+      margin: auto;
+      margin-top: 5px;
+    }
+  }
+}
+.confirm-button {
+  position: absolute;;
+  bottom: 25px;
+  width: 140px;
+  font-size: 18px;
+  color: #FFFFFF;
+  background-color: #26C541;
+  height: 46px;
+  line-height: 46px;
+  text-align: center;
+  border-radius: 23px;
+  z-index: 1;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, .24);
+}

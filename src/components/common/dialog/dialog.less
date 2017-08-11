@@ -1,0 +1,47 @@
+.dialog-back {
+    font-size: 18px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.2)
+}
+.dialog-box {
+    width: 75%;
+    background: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 5px;
+    overflow: hidden;
+}
+.dialog-box-content {
+    padding: 1.4em 1em;
+    text-align: center;
+}
+.dialog-box-bottons {
+    overflow: hidden;
+    background: #00BC31;
+    .wrap{
+        margin-right: -2px;
+        display: flex;
+    }
+    botton {
+        display: inline-block;
+        box-sizing: border-box;
+        text-align: center;
+        padding: 0.5em 0;
+        color: #fff;
+        border: 0px solid transparent;
+        border-right-width: 1px;
+        border-top-width: 1px;
+        background-clip: padding-box;
+        flex-grow: 1;
+    }
+    .white {
+        color: #00BC31;
+        background: #fff;
+    }
+}

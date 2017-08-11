@@ -1,0 +1,42 @@
+.fetch-status {
+    position: fixed;
+    z-index: 10000;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, .6);
+    .panel {
+        width: 114px;
+        // height: 130px;
+        background-color: #FFFFFF;
+        -ms-transform: translate(-50%, -50%);
+        -webkit-transform: translate(-50%, -50%);
+        -moz-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        border-radius: 5px;
+        text-align: center;
+        padding-top: 20px;
+        padding-bottom: 15px;
+
+        .icon-tianjiachenggong.success {
+            font-size: 63px;
+            text-align: center;
+            color: #27E260;
+        }
+        .icon-cuowu1.fail {
+            font-size: 63px;
+            text-align: center;
+            color: #FF5E45;
+        }
+        p {
+            font-size: 14px;
+            margin-top: 10px;
+            color: #1A1A1A;
+            text-align: center;
+        }
+    }
+}

@@ -1,0 +1,116 @@
+.box-repair{
+  .detail{
+    padding: 10px 0 8px 15px;
+    color: #4E4E4C;
+    font-size: 14px;
+    background: #FFF;
+    .status{
+      font-size: 10px;
+      position: relative;
+      padding-left: 10px;
+      color: #3DCF55;
+      &:before{
+        content: '';
+        display: block;
+        position: absolute;
+        width: 8px;
+        height: 8px;
+        background: #3DCF55;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        border-radius: 50%;
+      }
+      &.offline{
+        color: #FF7646;
+        &:before{
+          background: #FF7646;
+        }
+      }
+    }
+  }
+  .list{
+    padding: 10px 0 10px 15px;
+    background: #FFF;
+    border-top: 1px solid #DDD;
+    span{
+      color: #989898;
+      padding-left: 20px;
+    }
+
+  }
+}
+.repair-test {
+  padding-bottom: 200px;
+  .device-info, .device-status {
+    background: #FFF;
+    margin: 10px 15px;
+    border-radius: 4px;
+    box-shadow: 0 1px 0 #DCDCDC;
+    padding: 5px;
+    color: #1A1A1A;
+    font-size: 14px;
+    li {
+      list-style: none;
+    }
+  }
+  .device-status {
+    ul {
+      max-height: 80px;
+      overflow: auto;
+    }
+    li {
+      .time {
+        color: #909090;
+      }
+      .status {
+        float: right;
+      }
+    }
+  }
+  .bind-success {
+    margin-top: 5px;
+  }
+  .turn-switch {
+    margin-top: 20px;
+  }
+  .failure {
+    img {
+      width: 100px;
+      margin: auto;
+      display: block;
+    }
+    p {
+      font-size: 18px;
+      color: #909090;
+      text-align: center;
+      margin-bottom: 25px;
+      &.tip {
+        font-size: 14px;
+        color: #878787;
+        margin-top: 10px;
+        padding: 0 15px;
+        text-align: left;
+        margin-bottom: 0;
+        span {
+          display: inline-block;
+          text-align: center;
+          background: #878787;
+          color: #FFFFFF;
+          font-size: 12px;
+          width: 15px;
+          height: 15px;
+          border-radius: 50%;
+          margin-right: 10px;
+        }
+      }
+    }
+    .dian-btn.complete {
+      //bottom: 145px !important;
+      bottom: 80px !important;
+    }
+    //.dian-btn.lost {
+    //  bottom: 80px !important;
+    //}
+  }
+}

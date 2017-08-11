@@ -1,0 +1,104 @@
+.device-list{
+  .panel{
+    font-size: 16px;
+    color: #5A5A5A;
+    // background: #FFF;
+    .title,.reason{
+      height: 25px;
+      padding: 9px 0 0 12px;
+      position: relative;
+    }
+    .detail{
+      background: #FFF;
+      padding: 10px 20px;
+      p{
+        height: 40px;
+        padding: 0;
+        line-height: 40px;
+        span{
+          float:right;
+          width: 19px;
+          height: 19px;
+          border: 1px solid #DDD;
+          border-radius: 50%;
+          &.active{
+            background: #3DCF55;
+          }
+        }
+
+      }
+    }
+    .reason-info{
+      padding: 10px 13px 30px;
+      word-break: break-all;
+      background: #FFF;
+      textarea{
+        width: 100%;
+        border: none;
+        resize: none;
+        font-size: 16px;
+      }
+    }
+  }
+  .handle-buttons{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 50px;
+    div{
+      text-align: center;
+      line-height: 50px;
+      font-size: 18px;
+      width: 100%;
+      color: #FFF;
+      background: #3DCF55;
+      display: inline-block;
+    }
+
+  }
+}
+
+.chose-container {
+   ul {
+    background-color: #FFFFFF;
+     li {
+      font-size: 16px;
+      color: #4E4E4C;
+      padding: 15px 10px;
+      border-bottom: 1px solid #F5F5F5;
+      position: relative;
+      .inactive {
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        border: 1px solid #BDBDBD;
+      }
+      .active {
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        border: 1px solid #26C541;
+        > div {
+          width: 14px;
+          height: 14px;
+          margin-top: 3px;
+          margin-left: 3px;
+          background-color: #26C541;
+          border-radius: 50%;
+        }
+      }
+    }
+    li:last-child {
+     border-bottom: 1px solid transparent; 
+    }
+  }
+}

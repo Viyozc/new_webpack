@@ -1,0 +1,218 @@
+.container {
+  &>h4 {
+    color: #909090;
+    font-size: 14px;
+    margin: 10px 0;
+    padding: 0 15px;
+    font-weight: normal;
+  }
+  .quantity {
+    background: #FFF;
+    padding: 0 15px;
+    &>h4 {
+      color: #909090;
+      font-size: 14px;
+      border-bottom: 1px solid #F0F0F0;
+      line-height: 30px;
+      font-weight: normal;
+    }
+    p {
+      color: #1A1A1A;
+      line-height: 30px;
+      font-size: 14px;
+      .value {
+        float: right;
+      }
+    }
+  }
+}
+.device-list {
+  padding-bottom: 70px;
+  .device {
+    list-style: none;
+    background: #FFF;
+    margin-top: 8px;
+    padding: 15px;
+    position: relative;
+    box-sizing: border-box;
+    .status {
+      font-size: 10px;
+      color: #26C541;
+      position: relative;
+      margin-left: 15px;
+      &::before {
+        content: '';
+        display: block;
+        background: #26C541;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        position: absolute;
+        left: -15px;
+        top: 5px;
+      }
+    }
+    &.offline .status {
+      color: #FF7645;
+      &::before {
+        background: #FF7645;
+      }
+    }
+    .info {
+      float: left;
+      color: #4E4E4C;
+      font-size: 14px;
+    }
+    a {
+      float: right;
+      display: block;
+      height: 26px;
+      line-height: 25px;
+      background: #26C541;
+      border-radius: 15px;
+      width: 45px;
+      color: #7F7F7F;
+      font-size: 10px;
+      white-space: nowrap;
+      &:before {
+        display: block;
+        content: '';
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        background: #FFF;
+        margin-top: 1px;
+        margin-left: 20px;
+        transition: all 1s;
+        -webkit-transition: all 1s;
+      }
+      &.off {
+        background: #7f7f7f;
+        &:before {
+          margin-left: 1px;
+        }
+      }
+    }
+    .check {
+      float: right;
+      border: 1px solid #7f7f7f;
+      width: 24px;
+      height: 24px;
+      line-height: 24px;
+      border-radius: 50%;
+      margin-left: 20px;
+      box-sizing: border-box;
+      i {
+        display: none;
+      }
+    }
+    .check-sign {
+      float: right;
+      position: relative;
+      border: 1px solid #BDBDBD;
+      width: 24px;
+      height: 24px;
+      line-height: 24px;
+      border-radius: 50%;
+      margin-left: 30px;
+      box-sizing: border-box;
+      & > div {
+        width: 18px;
+        height: 18px;
+        line-height: 18px;
+        border-radius: 50%;
+        background: #BDBDBD;
+        margin-left: 2px;
+        margin-top: 2px;
+      }
+      &:before {
+        content: '标记遗失';
+        position: absolute;
+        left: -14px;
+        top: 23px;
+        color: #BDBDBD;
+        width: 50px;
+      }
+    }
+    &.selected {
+      .check {
+        border: none;
+        background: #26C541;
+        text-align: center;
+        i {
+          display: block;
+          color: #FFF;
+          font-size: 14px;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+  .check-sign.active {
+    border: 1px solid #FF7646;
+    & > div {
+      background: #FF7646;
+    }
+  }
+  .dian-btn {
+    left: 0;
+    right: 0;
+    bottom: 0;
+    position: fixed;
+    width: 100%;
+    border-radius: 0;
+  }
+}
+.wrapper {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0,0,0,0.5);
+  z-index: 99999;
+  .inner {
+    position: absolute;
+    width: 90%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    box-sizing: border-box;
+    padding: 15px;
+    background-color: #FFFFFF;
+    i {
+      font-size: 50px;
+      color: #FF7645;
+      display: block;
+      border-radius: 50%;
+      margin: auto;
+      text-align: center;
+    }
+    ul li {
+      margin-top: 10px;
+      list-style: none;
+      font-size: 16px;
+      color: #767676;
+      .index {
+        display: inline-block;
+        width: 18px;
+        height: 18px;
+        text-align: center;
+        line-height: 18px;
+        background: #BDBDBD;
+        border-radius: 50%;
+        color: #FFF;
+        margin-right: 10px;
+      }
+    }
+    a {
+      margin-top: 20px;
+      font-size: 18px;
+      color: #26C541;
+      text-align: center;
+      width: 100%;
+      display: block;
+    }
+  }
+}

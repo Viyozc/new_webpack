@@ -1,0 +1,54 @@
+.item {
+  position: relative;
+  background-color: #FFFFFF;
+  border-bottom: 1px solid #F5F5F5;
+  font-size: 12px;
+  padding: 5px 10px;
+  padding-left: 45px;
+  color: #777777;
+  .h4 {
+    font-size: 16px;
+    color: #1A1A1A;
+  }
+  .chose {
+    width: 24px;
+    height: 24px;
+    line-height: 24px;
+    border-radius: 50%;
+    text-align: center;
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    border: 1px solid #BDBDBD;
+  }
+  .chose.active {
+    background-color: #3DCF55;
+    border: 1px solid #3DCF55;
+    i {
+      font-size: 16px;
+      color: #FFFFFF;
+    }
+  }
+  p.status {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    font-size: 14px;
+  }
+  p.status.red {
+    color: #FF5E45;
+  }
+  p.status.green {
+    color: #26C541;
+  }
+  .device-type {
+  }
+  .type {
+    font-size: 16px;
+    color: #1A1A1A;
+    margin-top: 14px;
+    margin-left: 3px;
+  }
+}

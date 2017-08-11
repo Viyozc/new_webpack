@@ -1,0 +1,131 @@
+.section {
+  .section-header {
+    position: relative;
+
+    h3 {
+      font-size: 18px;
+      font-weight: normal;
+    }
+
+    .status {
+      position: absolute;
+      right: 15px;
+      top: 50%;
+      color: #FFAF32;
+      -webkit-transform: translateY(-50%);
+      transform: translateY(-50%);
+      &.green {
+        color: #27E260;
+      }
+      &.orange {
+        color: #FFAF32;
+      }
+      &.red {
+        color: #FF5E45;
+      }
+    }
+
+  }
+
+  .section-body {
+    .cell {
+      text-indent: 0;
+      line-height: 28px;
+      height: auto;
+      color: #777;
+      font-size: 14px;
+
+      &:before {
+        border: none;
+      }
+
+      &:last-child {
+        &:after {
+          border: none;
+        }
+      }
+
+      .cell-footer {
+        max-width: 200px;
+        line-height: 1.4;
+      }
+      .tel-phone {
+        color: #4C8CEF;
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .section-footer {
+    text-align: center;
+
+    .dian-btn {
+      background-color: transparent;
+      color: #27E260;
+      border: none;
+    }
+  }
+}
+.line {
+  & > div {
+    margin-left: 0 !important;
+    border-bottom: 1px solid #F0F0F0;
+  }
+}
+.green {
+  color: #27E260;
+}
+.orange {
+  color: #FFAF32;
+}
+.red {
+  color: #FF5E45;
+}
+.installs {
+  display: block;
+  position: relative;
+  padding-right: 20px;
+  border-bottom: 1px solid #F5F5F5;
+  i.icon-xuanze {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    color: #BDBDBD;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+  }
+}
+.installs:last-child {
+  border-bottom: 1px solid transparent;
+}
+.install-address{
+  margin-top: 10px;
+  box-sizing: border-box;
+  background: #fff;
+  padding: 10px 15px;
+  .title{
+    font-size: 14px;
+    color: #767676;
+  }
+  position: relative;
+  .address{
+    box-sizing: border-box;
+    padding-right: 140px;
+    font-size: 16px;
+    color: #1A1A1A;
+  }
+  .icon-location{
+    border-radius: 100%;
+    background: #f1f1f1;
+    width: 30px;
+    text-align: center;
+    line-height: 30px;
+    font-size: 20px;
+    height: 30px;
+    right: 15px;
+    position: absolute;
+    color: #1A1A1A;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}

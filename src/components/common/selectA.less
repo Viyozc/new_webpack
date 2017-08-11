@@ -1,0 +1,51 @@
+ul.select {
+  padding-bottom: 10px;
+  li {
+    position: relative;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 16px;
+    color: #1A1A1A;
+    p.model1-value, p.model1-sub-value {
+      margin-left: 30px;
+    }
+    .model1-check {
+      position: absolute;
+      left: 0;
+      width: 15px;
+      height: 15px;
+      border-radius: 2px;
+      border: 1px solid #BDBDBD;
+      top: 50%;
+      transform: translateY(-50%);
+      line-height: 1.2;
+    }
+    .model1-check.active {
+      background-color: #26C541;
+      border: 1px solid #26C541;
+      i {
+          font-size: 10px;
+          display: block;
+          margin-top: 2px;
+          margin-left: 1px;
+          color: #FFFFFF;
+      }
+    }
+    .model2-check {
+      border: 1px solid #E7E7E7;
+      padding: 10px 0;
+      font-size: 16px;
+      color: #909090;
+      border-radius: 7px;
+      text-align: center;
+      line-height: 1.2;
+      p:last-child {
+        font-size: 12px;
+      }
+    }
+    .model2-check.active {
+      border: 1px solid #26C541;
+      color: #26C541;
+    }
+  }
+}

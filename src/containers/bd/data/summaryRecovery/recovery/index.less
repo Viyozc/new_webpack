@@ -1,0 +1,132 @@
+.device-cell {
+  background: #FFFFFF;
+  .shop {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    background-color: #F5F5F5;
+    border: none;
+    color: #BDBDBD;
+    position: relative;
+    font-size: 14px;
+    .install {
+      .install-name {
+        color: #1A1A1A;
+      }
+      .install-time {
+        color: #909090;
+      }
+    }
+    .install-chose {
+      position: absolute;
+      right: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+  .summary {
+    td:last-child {
+      position: relative;
+      .icon-fenlei {
+        position: absolute;
+        right: 0;
+        top:13px;
+        font-size: 14px;
+        color: #BDBDBD;
+      }
+    }
+  }
+  table.show{
+    display: table;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    color: #1A1A1A;
+    tbody {
+      width: 100%;
+      tr {
+        border-bottom: 1px solid #E7E7E7;
+        td {
+          padding: 10px 0;
+          overflow: hidden;
+          text-align: center;
+          a {
+            color: #0074FF;
+            text-decoration: underline;
+          }
+          .weidabiao {
+            font-size: 12px;
+            padding: 0 4px;
+            border-radius: 2px;
+            background-color: #FFAF32;
+            color: #FFFFFF;
+          }
+          .battery-use {
+            font-size: 12px;
+            color: #BDBDBD;
+            & > span {
+              margin-right: 5px;
+            }
+          }
+          .shawller-grey {
+            font-size: 12px;
+            padding: 0 4px;
+            border-radius: 2px;
+            background-color: #909090;
+            color: #FFFFFF;
+          }
+          .grey {
+            font-size: 12px;
+            padding: 0 4px;
+            border-radius: 2px;
+            background-color: #BDBDBD;
+            color: #FFFFFF;
+          }
+          .red {
+            font-size: 12px;
+            padding: 0 4px;
+            border-radius: 2px;
+            background-color: #FF5E45;
+            color: #FFFFFF;
+          }
+          .green {
+            font-size: 12px;
+            padding: 0 4px;
+            border-radius: 2px;
+            background-color: #26C541;
+            color: #FFFFFF;
+          }
+        }
+        td:first-child {
+          text-align: left;
+        }
+        td:last-child {
+          padding-right: 10px;
+        }
+        td:nth-child(1) {
+          width: 55%;
+        }
+        td:nth-child(2) {
+          width: 11%;
+          color: #909090;
+        }
+        td:nth-child(3) {
+          width: 11%;
+        }
+        td:nth-child(4) {
+          width: 18%;
+        }
+      }
+    }
+  }
+}
+.child-notfound {
+  background-color: #FFFFFF;
+  text-align: center;
+  font-size: 14px;
+  color: #1A1A1A;
+  padding: 10px 0;
+}

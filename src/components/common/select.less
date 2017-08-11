@@ -1,0 +1,61 @@
+.modal-background {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0,0,0,0.5);
+  z-index: 99999;
+  .container {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #FFFFFF;
+    .head {
+      height: 48px;
+      background-color: #F7F7F7;
+      position: relative;
+      button {
+        line-height: 48px;
+        color: #909090;
+        font-size: 18px;
+        position: absolute;
+        outline: none;
+        border: none;
+        background: none;
+      }
+      .cancel-button {
+        left: 10px;
+      }
+      .ok-button {
+        right: 10px;
+      }
+    }
+    .content {
+      max-height: 313px;
+      overflow-y: scroll;
+      -webkit-overflow-scrolling: touch;
+      .li {
+        width: 100%;
+        text-align: center;
+        height: 54px;
+        line-height: 54px;
+        color: #909090;
+        font-size: 20px;
+        background-color: #FFFFFF;
+        border-bottom: 1px solid #F5F5F9;
+        i.icon-gou {
+          font-size: 20px;
+        }
+      }
+      .li:last-child {
+        border-bottom: none;
+      }
+    }
+    .li.active {
+      background-color: #22BEA4;
+      color: #FFFFFF;
+    }
+  }
+}

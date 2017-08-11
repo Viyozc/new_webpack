@@ -1,0 +1,50 @@
+.result {
+  ul {
+    background: #FFF;
+    margin-top: 8px;
+    padding: 0px 15px;
+    font-size: 16px;
+    color: #4E4E4C;
+    overflow: hidden;
+    li {
+      list-style: none;
+      line-height: 22px;
+      margin: 15px 0;
+      .radio {
+        float: right;
+        display: block;
+        border-radius: 50%;
+        border: 1px solid #BDBDBD;
+        width: 20px;
+        height: 20px;
+        box-sizing: border-box;
+        &.selected {
+          border: 2px solid #26C541;
+          position: relative;
+          &::before {
+            content: '';
+            display: block;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            margin-left: -5px;
+            margin-top: -5px;
+            width: 10px;
+            height: 10px;
+            background: #26C541;
+            border-radius: 50%;
+          }
+        }
+      }
+    }
+  }
+  textarea {
+    padding: 10px;
+    margin-top: 10px;
+    background-color: #FFFFFF;
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 16px;
+    color: #1A1A1A;
+  }
+}

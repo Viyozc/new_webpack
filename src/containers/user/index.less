@@ -1,0 +1,52 @@
+.cell {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  border: none;
+  background-color: #FFFFFF;
+  border-bottom: 1px solid #E7E7E7;
+  font-size: 16px;
+  color: #000000;
+  padding: 0 15px;
+  .left {
+    float: left;
+    height: 60px;
+    line-height: 60px;
+  }
+  .right {
+    float: right;
+    height: 60px;
+    line-height: 60px;
+    color: #777777;
+    position: relative;
+    .avatar {
+      border-radius: 50%;
+      font-size: 40px;
+      position: absolute;
+      top: 50%;
+      right: 0;
+      transform: translateY(-50%);
+      -webkit-transform: translateY(-50%);
+      width: 44px;
+      height: 44px;
+      background-position: center;
+      background-size: cover;
+    }
+    i.icon-xuanze {
+      font-size: 14px;
+    }
+  }
+}
+.logout {
+  text-align: center;
+  margin-top: 39px;
+  button {
+    width: 140px;
+    padding: 10px 0;
+    background: none;
+    border-radius: 4px;
+    font-size: 16px;
+    color: #FFAF32;
+    border: 1px solid #FFAF32;
+  }
+}

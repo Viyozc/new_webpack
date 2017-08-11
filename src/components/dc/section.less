@@ -1,0 +1,66 @@
+.section {
+  display: block;
+  background-color: #FFFFFF;
+  margin-top: 10px;
+  padding: 10px;
+  position: relative;
+  box-shadow: 0 2px 1px 0 rgba(0, 0, 0, .05);
+  & > .title {
+    position: relative;
+    color: #909090;
+    font-size: 14px;
+    i.icon-xuanze {
+      position: absolute;
+      right: 0;
+      top: 0;
+      color: #1A1A1A;
+    }
+    i.icon-wenhao {
+      display: inline-block;
+      font-size: 14px;
+    }
+  }
+  .content {
+    margin-top: 10px;
+    display: flex;
+    flex-flow: row wrap;
+    .label {
+      width: 50%;
+      text-align: center;
+      padding: 18px 0;
+      border-right: 1px solid #E3E3E3;
+      border-bottom: 1px solid #E3E3E3;
+      box-sizing: border-box;
+      p.value {
+        color: #1A1A1A;
+        font-size: 28px;
+      }
+      p.value.active {
+        color: #FF5E45;
+      }
+      p.title {
+        color: #909090;
+        font-size: 12px;
+      }
+      .device {
+        margin-top: 2px;
+        font-size: 10px;
+        color: #909090;
+        span {
+          border-bottom: 1px solid #909090;
+        }
+      }
+    }
+    .label:nth-child(2n) {
+      border-right: none
+    }
+  }
+  .cover-line {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 12px;
+    background-color: #FFFFFF;
+  }
+}

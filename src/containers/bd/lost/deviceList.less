@@ -1,0 +1,112 @@
+.device-list{
+  padding-bottom: 50px;
+  .panel{
+    margin-bottom: 14px;
+    font-size: 14px;
+    color: #222;
+    background: #FFF;
+    .title{
+      height: 44px;
+      position: relative;
+      span:first-child{
+        position: relative;
+        padding: 25px 0 0 15px;
+        top: 18px;
+      }
+      .state{
+        position: absolute;
+        right: 15px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: #FF5E45;
+        &.passed{
+          color: #3DCF55;
+        }
+        &.reject{
+          color: #D0021B
+        }
+      }
+    }
+    .user{
+      margin: 0 15px;
+      padding: 5px 5px;
+      background: #ddd;
+      span{
+        float: right;
+      }
+    }
+    .device{
+      padding: 15px 0 0 15px;
+    }
+    .detail{
+      margin: 0 15px;
+      padding: 5px 5px;
+      background: #ddd;
+      line-height: 1.5;
+      span{
+        float: right;
+        margin-right: 10px;
+      }     
+    }
+    .judge{
+      height: 55px;
+      padding: 14px 20px 0 15px;
+      position: relative;
+      color: #828282;
+      span{
+        position: absolute;
+        width: 80px;
+        height: 28px;
+        top: 50%;
+        text-align: center;
+        line-height: 28px;
+        border-radius: 3px;
+        // transform: translateY(-20%);
+        &.refuse{
+          background: #FFF;
+          color: #FF6C56;
+          right: 110px;
+          border: 1px solid #FF6C56;
+          box-sizing: border-box;
+        }
+        &:last-child{
+          background: #3DCF55;
+          color: #FFF;
+          right: 20px;
+        }
+      }
+    }
+  }
+  .handle-buttons{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 50px;
+    div{
+      text-align: center;
+      line-height: 50px;
+      font-size: 18px;
+      width: 50%;
+      background: #FFF;
+      display: inline-block;
+    }
+    .take{
+      background: #3DCF55;
+      color: #FFF;
+    }
+
+  }
+}
+.filter-tabs {
+  display: flex;
+  .dropdown {
+    flex: 1;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 14px;
+    color: #1A1A1A;
+    background-color: #FFF;
+    box-shadow: 0 1px 4px 0 rgba(0, 0, 0, .1);
+  }
+}

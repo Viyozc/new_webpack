@@ -1,0 +1,130 @@
+.container{
+  font-size: 14px;
+  .tabs{
+    padding: 8px 0;
+    box-sizing: border-box;
+    color: #777777;
+    background: #E7E7E7;
+    .tab{
+      display: inline-block;
+      box-sizing: border-box;
+      text-align: center;
+    }
+  }
+  .list{
+    background: #FFF;
+    text-align: center;
+  }
+}
+
+.bottom-button {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 50px;
+  line-height: 50px;
+  padding: 0;
+  text-align: center;
+  border: none;
+  font-size: 18px;
+  outline: none;
+  text-decoration: none;
+  display: block;
+  background-color: #3DCF55;
+  color: #FFFFFF;
+}
+.modal-background {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0,0,0,0.5);
+    z-index: 99999;
+}
+.modal-background .container {
+    position: absolute;
+    border-radius: 5px;
+    background-color: #FFF;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 70%;
+}
+.modal-background .content {
+  padding-top: 15px;
+}
+.modal-background .title {
+    text-align: left;
+    font-size: 16px;
+    padding-left: 10px;
+    padding-bottom: 15px;
+    span{
+      margin-left: 10px;
+      color: #F5A623;
+    }
+}
+.modal-background .description{
+    color: #1C1C1C;
+    font-size: 14px;
+    line-height: 2;
+    text-align: center;
+    span{
+      margin-left: 50px;
+    }
+    padding-bottom: 10px;
+}
+.modal-background .help{
+  color: #909090;
+  text-align: center;
+  font-size: 12px;
+  padding-bottom: 5px;
+}
+.modal-background .button {
+    background-color: #FFFFFF;
+    width: 100%;
+    height: 45px;
+    background: #3DCF55;
+    line-height: 45px;
+    color: #FFF;
+    font-size: 18px;
+    text-align: center;
+    border-radius: 0 0 5px 5px;
+    &.db-button{
+      width: 50%;
+      display: inline-block;
+      &:first-child{
+        background: #F5F5F5;
+        color: #1C1C1C;
+        border-radius: 0 0 0 5px;
+      }
+      &:last-child{
+        border-radius: 0 0 5px 0;
+      }
+    }
+}
+.advice{
+  .image{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid #F5A623;
+    text-align: center;
+    line-height: 40px;
+    color: #F5A623;
+    margin: 0 auto;
+    font-size: 30px;
+    margin-bottom: 10px;
+  }
+  .title{
+    text-align: center;
+    padding: 0 16px 10px;
+  }
+  .description{
+    padding-bottom: 30px;
+  }
+  .db-button:last-child{
+    background: #F5A623;
+  }
+}

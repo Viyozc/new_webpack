@@ -1,0 +1,116 @@
+.notice {
+  background: #FFEFC3;
+  padding: 10px 5px;
+  color: #1A1A1A;
+  font-size: 14px;
+  // width: 100%;
+  padding-left: 10px;
+  span{
+    display: inline-block;
+    width: 50%;
+    box-sizing: border-box;
+    // padding-left: 10px;
+    &:nth-child(odd){
+      border-right: 1px dashed #C1C1C1;
+    }
+    &:nth-child(even){
+      padding-left: 15px;
+    }
+  }
+}
+.bottom-button {
+  display: block;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #FFFFFF;
+  height: 50px;
+  a,div {
+    display: inline-block;
+    width: 50%;
+    color: #FFFFFF;
+    font-size: 18px;
+    line-height: 50px;
+    text-align: center;
+  }
+  a:first-child {
+    background-color: #FFFFFF;
+    color: #1A1A1A;
+  }
+  div {
+    background-color: #26C541;
+    color: #FFFFFF;
+  }
+}
+.modal{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,.5);
+  .panel{
+    width: 240px;
+    height: 204px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    background: #FFF;
+    font-size: 16px;
+    border-radius: 5px;
+    text-align: center;
+    padding: 27px 0 0;
+    box-sizing: border-box;
+    p{
+      margin-bottom: 12px;
+    }
+    .store{
+      margin: 0 auto;
+      width: 188px;
+      height: 30px;
+      margin-top: 20px;
+      color: #26C541;
+      // padding: 5px 0;
+      border: 1px solid #26C541;
+      margin-top: 10px;
+      border-radius: 15px;
+      line-height: 30px;
+      box-sizing: border-box;
+      &:last-child{
+        color: #FFF;
+      }
+    }
+    .store.active{
+      margin: 0 auto;
+      width: 188px;
+      height: 30px;
+      // padding: 5px 0;
+      background: #26C541;
+      color: #FFF;
+      margin-top: 10px;
+      border-radius: 15px;
+      line-height: 30px;
+    }
+    .buttons{
+      position: absolute;
+      height: 50px;
+      bottom: 0;
+      width: 100%;
+      div{
+        display: inline-block;
+        width: 50%;
+        text-align: center;
+        line-height: 50px;
+        background: #F5F5F5;
+        border-radius: 0 0 0 5px;
+        &:last-child{
+          background: #26C541;
+          color: #FFF;
+          border-radius: 0 0 5px 0;
+        }
+      }
+    }
+  }
+}

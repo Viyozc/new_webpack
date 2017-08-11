@@ -1,0 +1,113 @@
+.section {
+  .section-header {
+    position: relative;
+
+    h3 {
+      font-size: 18px;
+      font-weight: normal;
+    }
+
+    .status {
+      position: absolute;
+      right: 15px;
+      top: 50%;
+      color: #FFAF32;
+      -webkit-transform: translateY(-50%);
+      transform: translateY(-50%);
+      &.green {
+        color: #27E260;
+      }
+      &.orange {
+        color: #FFAF32;
+      }
+      &.red {
+        color: #FF5E45;
+      }
+    }
+
+  }
+
+  .section-body {
+    .cell {
+      text-indent: 0;
+      line-height: 28px;
+      height: auto;
+      color: #777;
+      font-size: 14px;
+
+      &:before {
+        border: none;
+      }
+
+      &:last-child {
+        &:after {
+          border: none;
+        }
+      }
+
+      .cell-footer {
+        max-width: 200px;
+        line-height: 1.4;
+      }
+      .tel-phone {
+        color: #4C8CEF;
+        text-decoration: underline;
+      }
+      &.second {
+        display: block;
+        .cell-footer {
+          text-align: left;
+          color: #1A1A1A;
+        }
+        i {
+          display: block;
+          position: absolute;
+          top: 50%;
+          right: 0;
+          height: 34px;
+          width: 34px;
+          background: rgba(26,26,26,0.07);
+          color: #000;
+          font-size: 20px;
+          text-align: center;
+          margin-top: -17px;
+          border-radius: 50%;
+          line-height: 34px;
+        }
+      }
+      &.complete {
+        .cell-footer {
+          color: #3DCF55;
+        }
+      }
+      &.not-complete {
+        .cell-footer {
+          color: #FF5E45;
+        }
+      }
+    }
+  }
+}
+
+.section-footer {
+  height: 210px;
+  background: #F5F5F5;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+
+  .dian-btn {
+    &.white {
+      background-color: #fff;
+      color: #3DCF55;
+      box-shadow: 0 1px 1px #7f7f7f;
+      border: none;
+      &.white1 {
+        bottom: 145px !important;
+      }
+      &.white2 {
+        bottom: 80px !important;
+      }
+    }
+  }
+}

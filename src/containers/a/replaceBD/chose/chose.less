@@ -1,0 +1,61 @@
+.chose-container {
+  padding-bottom: 60px;
+  > ul {
+    background-color: #FFFFFF;
+    > li {
+      font-size: 16px;
+      color: #4E4E4C;
+      padding: 15px 10px;
+      border-bottom: 1px solid #F5F5F5;
+      position: relative;
+      .inactive {
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        border: 1px solid #BDBDBD;
+      }
+      .active {
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        border: 1px solid #26C541;
+        > div {
+          width: 14px;
+          height: 14px;
+          margin-top: 3px;
+          margin-left: 3px;
+          background-color: #26C541;
+          border-radius: 50%;
+        }
+      }
+    }
+    >li:last-child {
+     border-bottom: 1px solid transparent; 
+    }
+  }
+  .button {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 50px;
+    line-height: 50px;
+    padding: 0;
+    text-align: center;
+    border: none;
+    font-size: 18px;
+    outline: none;
+    text-decoration: none;
+    display: block;
+    background-color: #3DCF55;
+    color: #FFFFFF;
+  }
+}

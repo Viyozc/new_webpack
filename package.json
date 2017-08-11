@@ -67,7 +67,16 @@
     "style-loader": "^0.13.0",
     "url-loader": "^0.5.6",
     "webpack": "^2.6.1",
-    "webpack-dev-server": "^2.6.1"
+    "webpack-dev-server": "^2.6.1",
+    "babel-eslint": "7.1.1",
+    "gulp": "3.9.1",
+    "gulp-shell": "^0.6.3",
+    "gulp-util": "3.0.8",
+    "jsx-loader": "0.13.2",
+    "snazzy": "5.0.0",
+    "standard": "8.5.0",
+    "stats-webpack-plugin": "0.3.1",
+    "webpack-browser-plugin": "1.0.12"
   },
   "dependencies": {
     "babel-runtime": "^6.23.0",
@@ -82,6 +91,17 @@
     "react-router-dom": "^4.1.1",
     "react-router-redux": "^4.0.8",
     "redux": "^3.6.0",
-    "redux-devtools-extension": "^2.13.0"
+    "redux-devtools-extension": "^2.13.0",
+    "classnames": "2.2.5",
+    "cookie_js": "1.2.2",
+    "es6-promise": "3.2.1",
+    "isomorphic-fetch": "2.2.1",
+    "lodash": "4.15.0",
+    "nprogress": "0.2.0",
+    "redux-fetch-elegant": "1.0.3",
+    "redux-logger": "2.6.1",
+    "redux-thunk": "2.1.0",
+    "swiper": "3.4.1",
+    "ua-parser-js": "^0.7.12"
   }
 }

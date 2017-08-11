@@ -1,0 +1,86 @@
+.device-list{
+  padding-bottom: 150px;
+  .panel{
+    font-size: 14px;
+    color: #4E4E4C;
+    background: #FFF;
+    .title{
+      color: #FF5E45;
+      height: 33px;
+      text-align: right;
+      padding: 23px 15px 0;
+      position: relative;
+      // border-top: 1px solid #979797;
+    }
+    .lists{
+      .list{
+        padding: 8px 14px 0;
+        border-top: 1px solid #EEE;
+        height: 65px;
+        color: #4E4E4C;
+        font-size: 14px;
+        position: relative;
+        margin-bottom: 10px;
+        .state{
+          margin-left: 10px;
+          font-size: 10px;
+          position: relative;
+          color: #FF7646;
+          &:before{
+            content:'';
+            display: table;
+            position: absolute;
+            width:8px;
+            height: 8px;
+            left: -10px;
+            top: 50%;
+            border-radius: 50%;
+            transform: translateY(-50%);
+            background: #FF7646;
+          }
+        }
+      }
+      .list.count-list{
+        height: 50px;
+        line-height: 50px;
+      }
+    }
+
+  }
+  .reason{
+    font-size: 16px;
+    padding-left: 15px;
+    line-height: 2; 
+    color: #5A5A5A;
+  }
+  .reason-info{
+    margin: 0;
+    font-size: 14px;
+    padding: 10px 15px;
+    padding-right: 15px;
+    word-break: break-all;
+    color: #5A5A5A;
+    background: #FFF;
+  }
+  .handle-buttons{
+    div{
+      position: fixed;
+      bottom: 82px;
+      left: 10px;
+      right: 10px;
+      text-align: center;
+      height: 50px;
+      line-height: 50px;
+      font-size: 18px;
+      border-radius: 5px;
+      background: #FFF;
+      background: #3DCF55;
+      color: #FFF;
+      display: inline-block;
+    }
+    div:last-child{
+      bottom: 22px;
+      background: #FF7646;
+    }
+  }
+}

@@ -1,25 +1,25 @@
-/**
- * Created by Administrator on 2016/7/2.
- */
-// 初始化状态
-let initNavList = {
-    navMain: [],
-    bookDetails: []
-}
+import assign from 'lodash/assign'
+import {
+  STATUS_SUCCESS
+} from 'redux-fetch-elegant'
+import {
+  FETCH_DATA_PREVIEW,
+  FETCH_DATA_MONTHLIST
+} from 'constants/actionTypes/home'
 
-export function home(state = initNavList, action) {
-    switch (action.type) {
-        case 'RECEIVE_NAV':
-            return {
-                ...state,   //三个点是展开符
-                navMain: action.navMain
-            }
-        case 'RECEIVE_BOOK':
-            return {
-                ...state,
-                bookDetails: action.bookDetails
-            }
-        default:
-            return {...state};
-    }
+export default function fetchDataSellerPreviewReducer (state = {}, action) {
+  switch (action.type) {
+    case FETCH_DATA_PREVIEW:
+      if (action.status === STATUS_SUCCESS) {
+        state.data = action.payload
+        return assign({}, state)
+      }
+      break
+    case FETCH_DATA_MONTHLIST:
+      if (action.status === STATUS_SUCCESS) {
+        state.selectDate = action.payload
+        return assign({}, state)
+      }
+  }
+  return state
 }

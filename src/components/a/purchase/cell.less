@@ -1,0 +1,50 @@
+.item {
+  font-size: 14px;
+  color: #4E4E4C;
+  padding: 10px 15px;
+  margin-top: 10px;
+  background: #FFFFFF;
+  .header {
+    color: #909090;
+    position: relative;
+    .right {
+      font-size: 14px;
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      .green {
+        color: #3DCF55
+      }
+      .red {
+        color: #FF5E45;
+      }
+    }
+  }
+  .child-item {
+    background: #F5F5F5;
+    padding: 5px;
+    color: #1A1A1A;
+    font-size: 12px;
+    .h6 {
+      color: #909090;
+    }
+  }
+  .footer {
+    position: relative;
+    .right {
+      position: absolute;
+      right: 0;
+      top: 60%;
+      transform: translateY(-50%);
+      > p {
+        color: #1A1A1A;
+        font-size: 14px;
+        span.total-amount {
+          color: #FF5E45;
+          font-size: 18px;
+        }
+      }
+    }
+  }
+}

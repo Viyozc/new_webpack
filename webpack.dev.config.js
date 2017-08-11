@@ -7,14 +7,12 @@ var argv = require('yargs').argv
 const HappyPack = require('happypack')
 const os = require('os')
 const ip = require('ip').address()
-// const happyThreadPool = HappyPack.ThreadPool({ size: os.cpus().length })
+const happyThreadPool = HappyPack.ThreadPool({ size: os.cpus().length })
 
 // 判断当前运行环境是开发模式还是生产模式
 const nodeEnv = process.env.NODE_ENV || 'development'
 const isPro = nodeEnv === 'production'
-const postPlugin = [
-  require('precss')(),
-]
+
 console.log('当前运行环境：', isPro ? 'production' : 'development')
 
 module.exports = {
@@ -24,7 +22,7 @@ module.exports = {
     'react-hot-loader/patch',
     'webpack-dev-server/client?http://localhost:3100',
     'webpack/hot/only-dev-server',
-    './entry'
+    './main'
   ],
   output: {
     filename: 'bundle.js',
@@ -59,6 +57,13 @@ module.exports = {
     new webpack.NoEmitOnErrorsPlugin(),
     new webpack.LoaderOptionsPlugin({
          // test: /\.xxx$/, // may apply this only for some modules
+    }),
+    new HappyPack({
+      id: 'happybabel',
+      loaders: ['babel-loader?cacheDirectory=true'],
+      threadPool: happyThreadPool,
+      cache: true,
+      verbose: true
     })
     //  new HappyPack({
     //   id: 'happybabel',
@@ -100,18 +105,17 @@ module.exports = {
       {
         test: /\.js$/,
         exclude: /(node_modules)/,
-        use: {
-          loader: 'babel-loader?cacheDirectory=true'
-        }
-        //  use: ['happypack/loader?id=happybabel']
+        // use: {
+        //   loader: 'babel-loader?cacheDirectory=true'
+        // }
+         use: ['happypack/loader?id=happybabel']
       },
       {
         test: /\.(css)$/,
         use: [
           {loader: 'style-loader/useable'},
           {loader: 'css-loader'},  
-          {
-            loader: 'postcss-loader',
+          {loader: 'postcss-loader',
             options: {
               plugins: function() {
                 return [
@@ -129,8 +133,6 @@ module.exports = {
         test: /\.less$/,
         use: ['style-loader/useable','css-loader', 'less-loader']
       },
-      // { test: /\.css$/, loader: 'css-loader!postcss-loader' },
-      // { test: /\.less$/, loader: 'css-loader!less-loader' },
       {
         test: /\.(png|jpg|gif|svg|eot|ttf|woff|woff2)$/,
         use: ['url-loader?limit=1000&name=files/[md5:hash:base64:10].[ext]']

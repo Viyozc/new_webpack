@@ -1,0 +1,207 @@
+.add-container {
+  padding-bottom: 70px;
+  .bottom {
+    position: fixed;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    background: #FFF;
+    height: 56px;
+    padding: 9px 10px;
+    box-sizing: border-box;
+    border-top: 1px solid #E7E7E7;
+    .bottom-left {
+      float: left;
+      text-align: center;
+      margin-right: 3px;
+      color: #4E4E4C;
+      font-size: 12px;
+      .count {
+        display: block;
+      }
+    }
+    a {
+      font-size: 16px;
+      color: #FFF;
+      background: #26C541;
+      border-radius: 2px;
+      height: 38px;
+      line-height: 38px;
+      position: absolute;
+      right: 10px;
+      padding: 0 20px;
+    }
+  }
+}
+.install-form {
+  background-color: #fff;
+  border-radius: 5px;
+  margin: 15px;
+
+  .numbers {
+    color: #909090;
+    font-size: 16px;
+    height: 128px;
+    position: relative;
+
+    > img,
+    > div {
+      position: absolute;
+      top: 50%;
+      -webkit-transform: translateY(-50%);
+      transform: translateY(-50%);
+    }
+
+    > img {
+      width: 80px;
+      left: 10px;
+    }
+
+    > .price {
+      left: 100px;
+    }
+
+    > .input {
+      right: 10px;
+      width: 50px;
+      text-align: center;
+
+      &:before {
+        content: ' ';
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        border-left: 1px solid #F5F5F5;
+        -webkit-transform-origin: 0 0;
+        transform-origin: 0 0;
+        -webkit-transform: scaleX(.5);
+        transform: scaleX(.5);
+      }
+
+      > button {
+        display: block;
+        margin: 0 auto;
+        font-size: 30px;
+        color: #BDBDBD;
+        background-color: #FFFFFF;
+        border: none;
+        height: 40px;
+        line-height: 40px;
+      }
+      > .add-device {
+        margin-bottom: 5px;
+      }
+
+      > input {
+        width: 26px;
+        height: 26px;
+        line-height: 26px;
+        border: 1px solid #27E260;
+        text-align: center;
+        outline: none;
+        color: #27E260;
+        font-size: 16px;
+      }
+    }
+  }
+  .border-bottom {
+    border-bottom: 1px solid #E7E7E7;
+  }
+  .device-line {
+    & > div {
+      margin-right: 15px;
+      border-bottom: 1px solid #F5F5F5;
+
+    }
+  }
+  .cash {
+    background-color: #F5F5F5;
+    margin: 10px;
+    text-align: center;
+    font-size: 14px;
+    color: #909090;
+    padding: 10px 0;
+
+    p {
+      &:last-child {
+        color: #FF5E45;
+        font-size: 24px;
+      }
+    }
+  }
+
+  .cell {
+    font-size: 14px;
+  }
+
+  .time-title {
+    color: #1A1A1A;
+    font-size: 14px;
+    margin: 0 0 0 15px;
+  }
+
+  .time-options {
+    > span.active {
+      background-color: #27E260;
+      color: #FFFFFF;
+    }
+    > span {
+      background-color: #F5F5F5;
+      color: #909090;
+      height: 32px;
+      line-height: 32px;
+      display: inline-block;
+      font-size: 14px;
+      border-radius: 4px;
+      width: 94px;
+      text-align: center;
+      margin: 15px 0 0 15px;
+
+      &.highlight {
+        background-color: #27E260;
+        color: #fff;
+      }
+    }
+  }
+
+  .cash-option-title {
+    font-size: 18px;
+    color: #909090;
+    text-align: center;
+    line-height: 50px;
+    border-top: 1px dashed #E7E7E7;
+    margin-top: 30px;
+  }
+
+  .cash-options {
+    > span {
+      color: #909090;
+      border: 1px solid #BDBDBD;
+      border-radius: 5px;
+      width: 150px;
+      line-height: 46px;
+      text-align: center;
+      font-size: 16px;
+      display: inline-block;
+    }
+  }
+}
+.install-next-form {
+  background-color: #fff;
+  border-radius: 5px;
+  margin: 15px;
+  padding: 15px;
+  .select-title {
+    font-size: 14px;
+    color: #1A1A1A;
+  }
+}
+.notice-green {
+  color: #27E260;
+  font-size: 12px;
+}
+.cell-line {
+  height: 1px;
+  background-color: #F5F5F5;
+}

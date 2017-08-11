@@ -1,0 +1,302 @@
+.shop-item {
+  display: block;
+  margin-top: 6px;
+  background-color: #fff;
+  padding: 0 15px;
+  .space {
+    height: 20px;
+  }
+  .shop-item-header {
+    height: 50px;
+    position: relative;
+    .device-type {
+      float: left;
+    }
+    .type {
+      font-size: 16px;
+      color: #1A1A1A;
+      margin-top: 14px;
+      margin-left: 3px;
+      float: left;
+    }
+    h3 {
+      color: #1A1A1A;
+      font-size: 18px;
+      font-weight: normal;
+      line-height: 50px;
+      float: left;
+    }
+    .redDirect, .buleAgent, .greenAgent {
+      float: left;
+      margin-top: 16px;
+      margin-left: 3px;
+      height: 14px;
+      line-height: 15px;
+      text-align: center;
+      border: 1px #F6A623 solid;
+      border-radius: 3px;
+      font-size: 10px;
+      padding: 0 3px;
+    }
+    .greenAgent {
+      color: #27E260;
+      border: 1px #27E260 solid;
+    }
+    .buleAgent {
+      color: #F6A623;
+      border: 1px #F6A623 solid;
+    }
+    .redDirect {
+      color: #76B6FF;
+      border: 1px #76B6FF solid;
+    }
+    .repair-title {
+      height: 50px;
+      line-height: 50px;
+      color: #4E4E4C;
+    }
+
+    .status {
+      position: absolute;
+      right: 0;
+      top: 50%;
+      -webkit-transform: translateY(-50%);
+      transform: translateY(-50%);
+      text-align: right;
+      line-height: 1.4;
+
+      > p:first-child {
+        font-size: 12px;
+      }
+
+      > p:last-child {
+        font-size: 12px;
+      }
+
+      &.green {
+        color: #27E260;
+      }
+      &.orange {
+        color: #FFAF32;
+      }
+      &.red {
+        color: #FF5E45;
+      }
+    }
+  }
+
+  .shop-item-body {
+    background-color: #F5F5F5;
+    padding: 6px;
+    font-size: 14px;
+    color: #4E4E4C;
+    .reason {
+      border-top: 1px solid #FFFFFF;
+    }
+    .red{
+      color: #FF5E45;
+    }
+  }
+  .reason-body {
+    margin-top: 10px;
+  }
+  .shop-status {
+    border-top: 1px solid #FFFFFF;
+    background-color: #F5F5F5;
+    font-size: 14px;
+    color: #4E4E4C;
+    padding: 6px;
+  }
+
+  .shop-item-btn {
+    font-size: 0;
+    text-align: right;
+    padding: 10px 0;
+    .btn-refuse, .btn-pass {
+      display: inline-block;
+      vertical-align: middle;
+      width: 72px;
+      height: 28px;
+      color: #fff;
+      font-size: 14px;
+      border-radius: 3px;
+    }
+    .btn-refuse{
+      background: #FF5E45;
+    }
+    .btn-pass{
+      margin-left: 10px;
+      background: #3DCF55;
+    }
+  }
+
+  .shop-item-footer {
+    color: #909090;
+    font-size: 12px;
+    height: 50px;
+    position: relative;
+
+    > div {
+      position: absolute;
+      left: 0;
+      top: 50%;
+      -webkit-transform: translateY(-50%);
+      transform: translateY(-50%);
+    }
+    .btn-box {
+      right: 0;
+      bottom: 0;
+      .dian-btn {
+        position: absolute;
+        right: 0;
+        top: 50%;
+        -webkit-transform: translateY(-50%);
+        transform: translateY(-50%);
+        border: 1px solid #FF5E45;
+        color: #fff;
+        line-height: 28px;
+        height: 28px;
+        font-size: 14px;
+        background-color: #FF5E45;
+        padding: 0 10px;
+        border-radius: 2px;
+      }
+      .shamBd {
+        position: absolute;
+        right: 60px;
+        top: 50%;
+        -webkit-transform: translateY(-50%);
+        transform: translateY(-50%);
+        border: 1px solid #FF5E45;
+        color: #FF5E45;
+        line-height: 28px;
+        height: 28px;
+        font-size: 14px;
+        background-color: transparent;
+        padding: 0 10px;
+        border-radius: 2px;
+      }
+      .btn-add-device {
+        right: 85px;
+      }
+      .btn-install {
+        color: #fff;
+        background: #FF5E45;
+      }
+    }
+
+    .move-left {
+      right: 80px;
+    }
+    .aggree {
+      background-color: #FF5E45;
+      color: #FFFFFF;
+    }
+  }
+}
+
+.opc-wap {
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.7);
+  .white-wap {
+    position: absolute;
+    top: 25%;
+    width: 70%;
+    left: 15%;
+    border-radius: 5px;
+    background: #fff;
+    height: 193px;
+    .white-dl {
+      height: 100%;
+      position: relative;
+      .title {
+        width: 100%;
+        text-align: center;
+        color: #1B1B1B;
+        font-size: 16px;
+        padding: 10px 0;
+      }
+      .device-types {
+        text-align: center;
+        box-sizing: border-box;
+        width: 100%;
+        padding: 0 10%;
+        font-size: 0;
+        .device-type {
+          position: relative;
+          display: inline-block;
+          vertical-align: middle;
+          width: 85px;
+          height: 85px;
+          .check {
+            position: absolute;
+            bottom: 3px;
+            right: 3px;
+            color: #BDBDBD;
+          }
+        }
+        .device-type.active {
+          .check {
+            color: #3DCF55;
+          }
+          border: 1px solid #3DCF55;
+        }
+        .device-type:nth-child(1) {
+          background: url("//img.shenghuozhe.net/shz/2017/03/21/273w_261h_5A7571490086595.png") no-repeat 0 0;
+          background-size: 100%;
+          float: left;
+        }
+        .device-type:nth-child(2) {
+          background: url("//img.shenghuozhe.net/shz/2017/03/21/273w_261h_5D7841490086543.png") no-repeat 0 0;
+          background-size: 100%;
+          float: right;
+        }
+        .device-type .active {
+          border: 1px solid #3DCF55;
+        }
+        .device-type.normal {
+          border: 1px solid #D6D6D6;
+        }
+      }
+      .btns {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        font-size: 0;
+        margin-top: 15px;
+        .btn {
+          display: inline-block;
+          vertical-align: middle;
+          width: 50%;
+          font-size: 18px;
+          color: #1A1A1A;
+          height: 45px;
+          background: #ECECEC;
+        }
+        .btn.btn-cancel {
+          border-bottom-left-radius: 5px;
+
+        }
+        .btn.btn-confirm {
+          border-bottom-right-radius: 5px;
+
+        }
+        .btn.btn-confirm.active {
+          color: #fff;
+          background: #3DCF55;
+        }
+        .btn.btn-confirm.normal {
+          border-left: 1px solid #fff;
+          color: #909090;
+        }
+      }
+    }
+
+  }
+}

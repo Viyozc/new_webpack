@@ -1,0 +1,36 @@
+.dian-table {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+
+  th {
+    line-height: 40px;
+    font-size: 14px;
+    color: #909090;
+    font-weight: normal;
+    text-align: center;
+  }
+
+  td {
+    line-height: 50px;
+    font-size: 14px;
+    color: #000;
+    text-align: center;
+    background-color: #fff;
+    position: relative;
+  }
+
+  td:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: 1;
+    border-top: 1px solid #F5F5F5;
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0;
+    -webkit-transform: scaleY(.5);
+    transform: scaleY(.5);
+  }
+}

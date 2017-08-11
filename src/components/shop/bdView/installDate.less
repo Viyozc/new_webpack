@@ -1,0 +1,44 @@
+.modal-background {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0,0,0,0.5);
+  z-index: 99999;
+  .container {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 10px 10px 0 10px;
+    background-color: #FFFFFF;
+    .content {
+      max-height: 313px;
+      overflow-y: scroll;
+      box-sizing: border-box;
+      .li {
+        font-size: 14px;
+        float: left;
+        width: 30%;
+        text-align: center;
+        color: #1A1A1A;
+        padding: 10px 0;
+        margin-bottom: 10px;
+        background-color: #FFFFFF;
+        border-radius: 4px;
+        margin-right: 5%;
+      }
+      .li:nth-child(3n) {
+        margin-right: 0;
+      }
+    }
+    .li.disabled {
+      color: #909090;
+    }
+    .li.active {
+      background-color: #26C541;
+      color: #FFFFFF;
+    }
+  }
+}

@@ -1,0 +1,112 @@
+@import "../shop/breakInstall/addDevice";
+.device-configure {
+  padding-bottom: 80px;
+  &>h4 {
+    color: #909090;
+    font-size: 14px;
+    margin: 10px 0;
+    padding: 0 15px;
+    font-weight: normal;
+  }
+  .quantity {
+    background: #FFF;
+    padding: 0 15px;
+    &>h4 {
+      color: #909090;
+      font-size: 14px;
+      border-bottom: 1px solid #F0F0F0;
+      line-height: 30px;
+      font-weight: normal;
+    }
+    p {
+      color: #1A1A1A;
+      line-height: 30px;
+      font-size: 14px;
+      .value {
+        float: right;
+      }
+    }
+  }
+  .mainframe {
+    margin-top: 10px;
+    background: #FFF;
+    padding: 0 15px;
+    li {
+      padding: 5px 0;
+      position: relative;
+      font-size: 14px;
+      color: #1A1A1A;
+      line-height: 50px;
+      border-bottom: 1px solid #F2F2F2;
+      .info {
+        line-height: 1.4;
+        .status {
+          font-size: 10px;
+          color: #26C541;
+          position: relative;
+          margin-left: 15px;
+          &::before {
+            content: '';
+            display: block;
+            background: #26C541;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            position: absolute;
+            left: -15px;
+            top: 3px;
+          }
+        }
+        .status.offline {
+          color: #FF7645;
+          &::before {
+            background: #FF7645;
+          }
+        }
+      }
+      i {
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        color: #909090;
+      }
+      &:last-child {
+        border-bottom: none;
+      }
+    }
+  }
+  .scan {
+    background: #FFF;
+    text-align: center;
+    font-size: 18px;
+    color: #26C541;
+    margin-top: 1px;
+    line-height: 70px;
+    i {
+      font-size: 23px;
+      margin-right: 5px;
+    }
+    span {
+      display: block;
+      width: 50%;
+      float: left;
+      box-sizing: border-box;
+      &:last-child {
+        color: #1A1A1A;
+        border-left: 1px solid #F5F5F5;
+        i {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+  .dian-btn {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    border-radius: 0;
+  }
+}

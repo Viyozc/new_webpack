@@ -1,0 +1,66 @@
+.total-panel {
+  margin-top: 10px;
+  border-radius: 4px;
+  background-color: rgba(26, 26, 26, 0.07);
+  padding: 0 5px;
+  box-sizing: border-box;
+  .total-panel-head {
+    line-height: 1;
+    min-height: 18px;
+    font-size: 12px;
+    color: #FFFFFF;
+    border-bottom: 1px solid #FFFFFF;
+    padding: 5px 0;
+    position: relative;
+    .total-panel-head-title {
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      -webkit-transform: translateY(-50%);
+    }
+    .total-panel-head-right {
+      float: right;
+      .select-month {
+        position: relative;
+        button {
+          border: none;
+          outline: none;
+          padding: 5px 30px 5px 15px;
+          border-radius: 2px;
+          font-size: 12px;
+          color: #FFFFFF;
+          i {
+            position: absolute;
+            right: 7px;
+            top: -1px;
+            font-size: 24px;
+          }
+        }
+      }
+    }
+  }
+  .total-panel-body {
+    .total-panel-body-card {
+      float: left;
+      width: 33.33%;
+      overflow: hidden;
+      text-align: center;
+      font-size: 12px;
+      color: #FFFFFF;
+      min-height: 85px;
+      box-sizing: border-box;
+      padding: 5px 10px;
+      .card-title {
+        height: 36px;
+        i.icon-xuanze {
+          font-size: 10px;
+        }
+      }
+      .card-value {
+        margin-top: 8px;
+        font-size: 20px;
+      }
+    }
+  }
+}

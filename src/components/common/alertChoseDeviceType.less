@@ -1,0 +1,112 @@
+.common-alert-opc-chose-device {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.7);
+  .white-wap {
+    position: absolute;
+    top: 25%;
+    width: 70%;
+    left: 15%;
+    border-radius: 5px;
+    background: #fff;
+    height: 193px;
+    .white-dl {
+      height: 100%;
+      position: relative;
+      .title {
+        width: 100%;
+        text-align: center;
+        color: #1B1B1B;
+        font-size: 16px;
+        padding: 10px 0;
+      }
+      .device-types {
+        text-align: center;
+        box-sizing: border-box;
+        width: 100%;
+        padding: 0 10%;
+        font-size: 0;
+        .device-type {
+          position: relative;
+          display: inline-block;
+          vertical-align: middle;
+          width: 85px;
+          height: 85px;
+          .check {
+            position: absolute;
+            bottom: 3px;
+            right: 3px;
+            color: #BDBDBD;
+          }
+        }
+        .device-type.active {
+          .check {
+            color: #3DCF55;
+          }
+          border: 1px solid #3DCF55;
+        }
+        .device-type:nth-child(1) {
+          background: url("//img.shenghuozhe.net/shz/2017/03/21/273w_261h_5A7571490086595.png") no-repeat 0 0;
+          background-size: 100%;
+          float: left;
+        }
+        .device-type:nth-child(2) {
+          background: url("//img.shenghuozhe.net/shz/2017/03/21/273w_261h_5D7841490086543.png") no-repeat 0 0;
+          background-size: 100%;
+          float: right;
+        }
+        .device-type .active {
+          border: 1px solid #3DCF55;
+        }
+        .device-type.normal {
+          border: 1px solid #D6D6D6;
+        }
+      }
+      .btns {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        font-size: 0;
+        margin-top: 15px;
+        .btn {
+          display: inline-block;
+          vertical-align: middle;
+          width: 50%;
+          font-size: 18px;
+          color: #1A1A1A;
+          height: 45px;
+          background: #ECECEC;
+        }
+        .btn.btn-cancel {
+          border-bottom-left-radius: 5px;
+
+        }
+        .btn.btn-confirm {
+          border-bottom-right-radius: 5px;
+
+        }
+        .btn.btn-confirm.active {
+          color: #fff;
+          background: #3DCF55;
+        }
+        .btn.btn-confirm.normal {
+          border-left: 1px solid #fff;
+          color: #909090;
+        }
+      }
+    }
+
+  }
+}
+
+.hide {
+  display: none;
+}
+
+.show {
+  display: block;
+}

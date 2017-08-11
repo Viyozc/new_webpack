@@ -1,0 +1,104 @@
+.install-detail {
+  padding-bottom: 80px;
+}
+.install-progress.section {
+  margin-top: 8px;
+}
+.install-section.section {
+  margin-top: 8px;
+  .section-header {
+    position: relative;
+
+    h3 {
+      font-size: 18px;
+      font-weight: normal;
+    }
+
+    .status {
+      position: absolute;
+      right: 15px;
+      top: 50%;
+      color: #FFAF32;
+      -webkit-transform: translateY(-50%);
+      transform: translateY(-50%);
+    }
+  }
+
+  .section-body {
+    border-bottom: 1px solid #E7E7E7;
+    position: relative;
+    .cell {
+      text-indent: 0;
+      line-height: 28px;
+      height: auto;
+      color: #777;
+      font-size: 14px;
+      display: block;
+
+      &:before {
+        border: none;
+      }
+
+      &:last-child {
+        &:after {
+          border: none;
+        }
+      }
+
+      .cell-footer {
+        max-width: 200px;
+        line-height: 1.4;
+        text-align: left;
+        color: #000;
+      }
+      .tel-phone {
+        color: #4C8CEF;
+        text-decoration: underline;
+      }
+      i {
+        display: block;
+        position: absolute;
+        top: 50%;
+        right: 0;
+        height: 34px;
+        width: 34px;
+        background: rgba(26,26,26,0.07);
+        color: #000;
+        font-size: 20px;
+        text-align: center;
+        margin-top: -17px;
+        border-radius: 50%;
+        line-height: 34px;
+      }
+    }
+  }
+
+  .section-footer {
+    text-align: center;
+
+    .dian-btn {
+      background-color: transparent;
+      color: #27E260;
+      border: none;
+    }
+  }
+}
+
+.bd {
+  padding: 15px;
+  p {
+    color: #767676;
+    font-size: 14px;
+    &:last-child {
+      color: #1A1A1A;
+    }
+    a {
+      float: right;
+      color: #4C8CEF;
+      text-decoration: underline;
+    }
+  }
+}
+.bd-title {
+    line-height: 1.4;
+}

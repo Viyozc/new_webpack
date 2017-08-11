@@ -1,0 +1,65 @@
+.modal-background {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0,0,0,0.5);
+  z-index: 99999;
+  .container {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #FFFFFF;
+    .head {
+      height: 48px;
+      background-color: #F7F7F7;
+      position: relative;
+      button {
+        line-height: 48px;
+        color: #909090;
+        font-size: 18px;
+        position: absolute;
+        outline: none;
+        border: none;
+        background: none;
+      }
+      .cancel-button {
+        left: 10px;
+      }
+      .ok-button {
+        right: 10px;
+      }
+    }
+    .content {
+      padding: 14px;
+      max-height: 313px;
+      overflow-y: scroll;
+      display: flex;
+      flex-flow: row wrap;
+      .li {
+        width: 48%;
+        text-align: center;
+        box-sizing: border-box;
+        margin-right: 4%;
+        margin-bottom: 4%;
+        height: 54px;
+        line-height: 54px;
+        color: #909090;
+        font-size: 20px;
+        background-color: #ECECEC;
+        i.icon-gou {
+          font-size: 20px;
+        }
+      }
+      .li:nth-child(2n) {
+        margin-right: 0;
+      }
+    }
+    .li.active {
+      background-color: #26C441;
+      color: #FFFFFF;
+    }
+  }
+}
