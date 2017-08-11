@@ -12,7 +12,9 @@ const ip = require('ip').address()
 // 判断当前运行环境是开发模式还是生产模式
 const nodeEnv = process.env.NODE_ENV || 'development'
 const isPro = nodeEnv === 'production'
-
+const postPlugin = [
+  require('precss')(),
+]
 console.log('当前运行环境：', isPro ? 'production' : 'development')
 
 module.exports = {
@@ -55,24 +57,27 @@ module.exports = {
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NamedModulesPlugin(),
     new webpack.NoEmitOnErrorsPlugin(),
-     new HappyPack({
-      id: 'happybabel',
-      loaders: [{
-        loader: 'babel-loader?cacheDirectory=true',
-        options: {
-          presets: ['react', 'env'],
-          plugins: [
-            ['transform-object-rest-spread'],
-            ['transform-runtime', {
-              polyfill: false,
-              regenerator: true
-            }]
-          ]
-        }
-      }],
-      threadPool: HappyPack.ThreadPool({ size: os.cpus().length }),
-      verbose: true
-    }),
+    new webpack.LoaderOptionsPlugin({
+         // test: /\.xxx$/, // may apply this only for some modules
+    })
+    //  new HappyPack({
+    //   id: 'happybabel',
+    //   loaders: [{
+    //     loader: 'babel-loader?cacheDirectory=true',
+    //     options: {
+    //       presets: ['react', 'env'],
+    //       plugins: [
+    //         ['transform-object-rest-spread'],
+    //         ['transform-runtime', {
+    //           polyfill: false,
+    //           regenerator: true
+    //         }]
+    //       ]
+    //     }
+    //   }],
+    //   threadPool: HappyPack.ThreadPool({ size: os.cpus().length }),
+    //   verbose: true
+    // }),
   ],
     // alias是配置全局的路径入口名称，只要涉及到下面配置的文件路径，可以直接用定义的单个字母表示整个路径
   resolve: {
@@ -95,24 +100,34 @@ module.exports = {
       {
         test: /\.js$/,
         exclude: /(node_modules)/,
-        // use: {
-        //   loader: 'babel-loader?cacheDirectory=true'
-        // }
-         use: ['happypack/loader?id=happybabel']
+        use: {
+          loader: 'babel-loader?cacheDirectory=true'
+        }
+        //  use: ['happypack/loader?id=happybabel']
       },
-      // {
-      //   test: /\.(less|css)$/,
-      //   use: ExtractTextPlugin.extract({
-      //     use: ['css-loader', 'less-loader', 'postcss-loader']
-      //   })
-      // },
       {
-        test: /\.css$/,
-        use: ['style-loader/useable', 'css-loader']
+        test: /\.(css)$/,
+        use: [
+          {loader: 'style-loader/useable'},
+          {loader: 'css-loader'},  
+          {
+            loader: 'postcss-loader',
+            options: {
+              plugins: function() {
+                return [
+                  require('autoprefixer'),  
+                  require('postcss-short'),
+                  require('precss'),
+                  require('postcss-import'),
+                ]
+              }
+            }
+          }
+        ]
       },
       {
         test: /\.less$/,
-        use: ['style-loader/useable', 'css-loader', 'less-loader']
+        use: ['style-loader/useable','css-loader', 'less-loader']
       },
       // { test: /\.css$/, loader: 'css-loader!postcss-loader' },
       // { test: /\.less$/, loader: 'css-loader!less-loader' },

@@ -1,0 +1,8 @@
+body{
+  div{
+    background: blue;
+  }
+  p{
+    text: uppercase center 2em;
+  }
+}

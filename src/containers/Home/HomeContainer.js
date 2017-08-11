@@ -11,7 +11,6 @@ import PropTypes from 'prop-types';
 /*actions*/
 import * as homeActions from 'actions/home';
 import * as globalActions from 'actions/global'
-import Style from './styles/home.less'
 /*component*/
 import { Header } from 'components/Home/Header';
 import { Nav } from 'components/Home/Nav';
@@ -40,9 +39,6 @@ export default class HomeContainer extends React.Component {
         //常用来绑定自定义函数，切记不要在这里或者组件的任何位置setState，state全部在reducer初始化，相信对开发的后期很有帮助
         //例子：this.myfunction = this.myfunction.bind(this)
         this.handleClick = this.handleClick.bind(this)
-    }
-    componentWillMount () {
-        Style.use()
     }
     componentWillMount() {
         const { navMain, bookDetails } = this.props.home

@@ -19,6 +19,7 @@ import { asyncComponent } from './AsyncComponent'
 
 import homeContainer from 'containers/Home/HomeContainer'
 import Style from './app.less'
+import test from './test.css'
 import home from 'containers/Home/styles/home.less'
 const Search = asyncComponent(() => import(/* webpackChunkName: "search" */ "./containers/Search/SearchContainer"))
 const BookList = asyncComponent(() => import(/* webpackChunkName: "bookList" */ "./containers/BookList/BookListContainer"))
@@ -31,6 +32,7 @@ export default class App extends React.Component {
     componentWillMount () {
         Style.use()
         home.use()
+        test.use()
     }
     componentDidMount() {
         window.addEventListener('hashchange', () => {
