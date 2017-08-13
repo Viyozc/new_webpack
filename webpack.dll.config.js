@@ -32,8 +32,8 @@ module.exports = {
        */
       name: '[name]_library'
     }),
-    new webpack.optimize.DedupePlugin(),
-    new webpack.optimize.OccurenceOrderPlugin(),
+    // new webpack.optimize.DedupePlugin(), //已移除
+    // new webpack.optimize.OccurenceOrderPlugin(),
     new UglifyJsParallelPlugin({
       workers: os.cpus().length,
       mangle: true,

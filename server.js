@@ -10,6 +10,18 @@ const routes = require('./server/router')
 
 const app = new Koa()
 
+const webpack = require('webpack')
+var webpackDevMiddleware = require('webpack-dev-middleware')
+var webpackHotMiddleware = require('webpack-hot-middleware')
+var config2 = require('./webpack.dev.config')
+var compiler = webpack(config)
+
+app.use(webpackDevMiddleware(compiler, {
+  noInfo: true,
+  publicPath: config2.output.publicPath
+}))
+app.use(webpackHotMiddleware(compiler))
+
 app.use(async (ctx, next) => {
   try {
     await next()

@@ -16,7 +16,7 @@ const isPro = nodeEnv === 'production'
 console.log('当前运行环境：', isPro ? 'production' : 'development')
 
 module.exports = {
-  context: path.resolve(__dirname, 'src'),
+  context: path.resolve(__dirname, 'src2'),
   devtool: 'inline-source-map',
   entry: [
     'react-hot-loader/patch',
@@ -30,35 +30,35 @@ module.exports = {
     publicPath: '/build/',
     chunkFilename: '[name].js'
   },
-    // BASE_URL是全局的api接口访问地址 
+    // BASE_URL是全局的api接口访问地址
   plugins: [
     // new ExtractTextPlugin('styles.css'),
     // new webpack.optimize.ModuleConcatenationPlugin(),
-    new webpack.DllReferencePlugin({
-      context: __dirname,
-      /**
-       * 在这里引入 manifest 文件
-       */
-      manifest: require(path.join(__dirname, '/static', 'vendor-mainfest.json'))
-    }),
-    new webpack.optimize.CommonsChunkPlugin({
-      name: 'vendor',
-      minChunks: function (module) {
-            // 该配置假定你引入的 vendor 存在于 node_modules 目录中
-        return module.context && module.context.indexOf('node_modules') !== -1
-      }
-    }),
+    // new webpack.DllReferencePlugin({
+    //   context: __dirname,
+    //   /**
+    //    * 在这里引入 manifest 文件
+    //    */
+    //   manifest: require(path.join(__dirname, '/static', 'vendor-mainfest.json'))
+    // }),
+    // new webpack.optimize.CommonsChunkPlugin({
+    //   name: 'vendor',
+    //   minChunks: function (module) {
+    //         // 该配置假定你引入的 vendor 存在于 node_modules 目录中
+    //     return module.context && module.context.indexOf('node_modules') !== -1
+    //   }
+    // }),
     new webpack.DefinePlugin({
         // 定义全局变量
       'process.env': {
         'NODE_ENV': JSON.stringify(nodeEnv)
       }
     }),
-    // new webpack.optimize.CommonsChunkPlugin({
-    //   children: true,
-    //   async: true,
-    //   minChunks: 5
-    // }),
+    new webpack.optimize.CommonsChunkPlugin({
+      children: true,
+      async: true,
+      minChunks: 5
+    }),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NamedModulesPlugin(),
     new webpack.NoEmitOnErrorsPlugin(),
@@ -74,7 +74,7 @@ module.exports = {
     }),
     new HappyPack({
       id: 'lessbabel',
-      loaders: ['style-loader/useable','css-loader', 'less-loader'],
+      loaders: ['style-loader/useable', 'css-loader', 'less-loader'],
       threadPool: happyThreadPool,
       cache: true,
       verbose: true
@@ -103,14 +103,14 @@ module.exports = {
     extensions: ['.js', '.jsx', '.less', '.css'],
     modules: [
       path.resolve(__dirname, 'node_modules'),
-      path.join(__dirname, './src')
+      path.join(__dirname, './src2')
     ],
     alias: {
-      'actions': path.resolve(__dirname, 'src/actions'),
-      'components': path.resolve(__dirname, 'src/components'),
-      'containers': path.resolve(__dirname, 'src/containers'),
-      'reducers': path.resolve(__dirname, 'src/reducers'),
-      'utils': path.resolve(__dirname, 'src/utils')
+      'actions': path.resolve(__dirname, 'src2/actions'),
+      'components': path.resolve(__dirname, 'src2/components'),
+      'containers': path.resolve(__dirname, 'src2/containers'),
+      'reducers': path.resolve(__dirname, 'src2/reducers'),
+      'utils': path.resolve(__dirname, 'src2/utils')
     }
   },
 
@@ -122,21 +122,21 @@ module.exports = {
         // use: {
         //   loader: 'babel-loader?cacheDirectory=true'
         // }
-         use: ['happypack/loader?id=happybabel']
+        use: ['happypack/loader?id=happybabel']
       },
       {
         test: /\.(css)$/,
         use: [
           {loader: 'style-loader/useable'},
-          {loader: 'css-loader'},  
+          {loader: 'css-loader'},
           {loader: 'postcss-loader',
             options: {
-              plugins: function() {
+              plugins: function () {
                 return [
-                  require('autoprefixer'),  
+                  require('autoprefixer'),
                   require('postcss-short'),
                   require('precss'),
-                  require('postcss-import'),
+                  require('postcss-import')
                 ]
               }
             }
@@ -154,16 +154,16 @@ module.exports = {
       }
     ]
   },
-  // devServer: {
-  //   hot: true,
-  //   compress: true,
-  //   port: 3100,
-  //   historyApiFallback: true,
-  //   contentBase: path.resolve(__dirname),
-  //   publicPath: '/build/',
-  //   stats: {
-  //     modules: false,
-  //     chunks: false
-  //   }
-  // }
+  devServer: {
+    hot: true,
+    compress: true,
+    port: 3100,
+    historyApiFallback: true,
+    contentBase: path.resolve(__dirname),
+    publicPath: '/build/',
+    stats: {
+      modules: false,
+      chunks: false
+    }
+  }
 }
