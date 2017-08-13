@@ -50,6 +50,22 @@ module.exports = {
       mangle: {
       except: ['$', 'exports', 'require']
     }
+    }),
+// let ParallelUglifyPlugin = require('webpack-parallel-uglify-plugin');
+// let os = require('os');
+    new ParallelUglifyPlugin({
+        workerCount: os.cpus().length,
+        cacheDir: '.cache/',
+        uglifyJS: {
+            compress: {
+                warnings: false,
+                drop_debugger: true,
+                drop_console: true
+            },
+            comments: false,
+            sourceMap: true,
+            mangle: true
+        }
     })
   ],
     // alias是配置全局的路径入口名称，只要涉及到下面配置的文件路径，可以直接用定义的单个字母表示整个路径

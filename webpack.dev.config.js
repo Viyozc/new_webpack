@@ -30,28 +30,35 @@ module.exports = {
     publicPath: '/build/',
     chunkFilename: '[name].js'
   },
-    // BASE_URL是全局的api接口访问地址
+    // BASE_URL是全局的api接口访问地址 
   plugins: [
     // new ExtractTextPlugin('styles.css'),
     // new webpack.optimize.ModuleConcatenationPlugin(),
-    // new webpack.optimize.CommonsChunkPlugin({
-    //   name: 'vendor',
-    //   minChunks: function (module) {
-    //         // 该配置假定你引入的 vendor 存在于 node_modules 目录中
-    //     return module.context && module.context.indexOf('node_modules') !== -1
-    //   }
-    // }),
+    new webpack.DllReferencePlugin({
+      context: __dirname,
+      /**
+       * 在这里引入 manifest 文件
+       */
+      manifest: require(path.join(__dirname, '/static', 'vendor-mainfest.json'))
+    }),
+    new webpack.optimize.CommonsChunkPlugin({
+      name: 'vendor',
+      minChunks: function (module) {
+            // 该配置假定你引入的 vendor 存在于 node_modules 目录中
+        return module.context && module.context.indexOf('node_modules') !== -1
+      }
+    }),
     new webpack.DefinePlugin({
         // 定义全局变量
       'process.env': {
         'NODE_ENV': JSON.stringify(nodeEnv)
       }
     }),
-    new webpack.optimize.CommonsChunkPlugin({
-      children: true,
-      async: true,
-      minChunks: 5
-    }),
+    // new webpack.optimize.CommonsChunkPlugin({
+    //   children: true,
+    //   async: true,
+    //   minChunks: 5
+    // }),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NamedModulesPlugin(),
     new webpack.NoEmitOnErrorsPlugin(),
@@ -61,6 +68,13 @@ module.exports = {
     new HappyPack({
       id: 'happybabel',
       loaders: ['babel-loader?cacheDirectory=true'],
+      threadPool: happyThreadPool,
+      cache: true,
+      verbose: true
+    }),
+    new HappyPack({
+      id: 'lessbabel',
+      loaders: ['style-loader/useable','css-loader', 'less-loader'],
       threadPool: happyThreadPool,
       cache: true,
       verbose: true
@@ -86,7 +100,7 @@ module.exports = {
   ],
     // alias是配置全局的路径入口名称，只要涉及到下面配置的文件路径，可以直接用定义的单个字母表示整个路径
   resolve: {
-    extensions: ['.js', '.jsx', '.less', '.scss', '.css'],
+    extensions: ['.js', '.jsx', '.less', '.css'],
     modules: [
       path.resolve(__dirname, 'node_modules'),
       path.join(__dirname, './src')
@@ -131,7 +145,8 @@ module.exports = {
       },
       {
         test: /\.less$/,
-        use: ['style-loader/useable','css-loader', 'less-loader']
+        // use: ['style-loader/useable','css-loader', 'less-loader']
+        use: ['happypack/loader?id=lessbabel']
       },
       {
         test: /\.(png|jpg|gif|svg|eot|ttf|woff|woff2)$/,
@@ -139,16 +154,16 @@ module.exports = {
       }
     ]
   },
-  devServer: {
-    hot: true,
-    compress: true,
-    port: 3100,
-    historyApiFallback: true,
-    contentBase: path.resolve(__dirname),
-    publicPath: '/build/',
-    stats: {
-      modules: false,
-      chunks: false
-    }
-  }
+  // devServer: {
+  //   hot: true,
+  //   compress: true,
+  //   port: 3100,
+  //   historyApiFallback: true,
+  //   contentBase: path.resolve(__dirname),
+  //   publicPath: '/build/',
+  //   stats: {
+  //     modules: false,
+  //     chunks: false
+  //   }
+  // }
 }
