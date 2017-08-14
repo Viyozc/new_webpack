@@ -63,11 +63,13 @@
     "koa": "^2.2.0",
     "koa-body": "^2.0.1",
     "koa-compress": "^2.0.0",
+    "koa-convert": "^1.2.0",
     "koa-favicon": "^2.0.0",
     "koa-request": "^1.0.0",
     "koa-router": "^7.2.0",
     "koa-static": "^3.0.0",
     "koa-views": "^6.0.2",
+    "koa-webpack-middleware": "^1.0.7",
     "less": "^2.7.1",
     "less-loader": "^2.2.2",
     "open": "0.0.5",
@@ -75,6 +77,7 @@
     "postcss-loader": "^2.0.6",
     "postcss-short": "^4.1.0",
     "precss": "^2.0.0",
+    "react-sync-fetch": "^1.0.13",
     "react-test-renderer": "^15.4.2",
     "react-transition-group": "^1.1.1",
     "redux-logger": "^2.8.2",
@@ -89,9 +92,7 @@
     "webpack": "^2.6.1",
     "webpack-browser-plugin": "1.0.12",
     "webpack-dev-server": "^2.6.1",
-    "webpack-uglify-parallel": "^0.1.3",
-        "koa-convert": "^1.2.0",
-        "koa-webpack-middleware": "^1.0.7"
+    "webpack-uglify-parallel": "^0.1.3"
   },
   "dependencies": {
     "babel-runtime": "^6.23.0",

@@ -52,7 +52,8 @@ module.exports = {
         // 定义全局变量
       'process.env': {
         'NODE_ENV': JSON.stringify(nodeEnv)
-      }
+      },
+      DEBUG: true
     }),
     new webpack.optimize.CommonsChunkPlugin({
       children: true,
@@ -60,11 +61,11 @@ module.exports = {
       minChunks: 5
     }),
     new webpack.HotModuleReplacementPlugin(),
-    new webpack.NamedModulesPlugin(),
+    // new webpack.NamedModulesPlugin(),
     new webpack.NoEmitOnErrorsPlugin(),
-    new webpack.LoaderOptionsPlugin({
-         // test: /\.xxx$/, // may apply this only for some modules
-    }),
+    // new webpack.LoaderOptionsPlugin({
+    //      // test: /\.xxx$/, // may apply this only for some modules
+    // }),
     new HappyPack({
       id: 'happybabel',
       loaders: ['babel-loader?cacheDirectory=true'],
@@ -135,8 +136,8 @@ module.exports = {
             options: {
               plugins: function () {
                 return [
-                  require('autoprefixer'),
-                  require('postcss-short'),
+                  // require('autoprefixer'),
+                  // require('postcss-short'),
                   require('precss'),
                   require('postcss-import')
                 ]
@@ -147,8 +148,8 @@ module.exports = {
       },
       {
         test: /\.less$/,
-        // use: ['style-loader/useable','css-loader', 'less-loader']
-        use: ['happypack/loader?id=lessbabel']
+        use: ['style-loader/useable', 'css-loader', 'less-loader']
+        // use: ['happypack/loader?id=lessbabel']
       },
       {
         test: /\.(png|jpg|gif|svg|eot|ttf|woff|woff2)$/,
@@ -157,15 +158,15 @@ module.exports = {
     ]
   },
   devServer: {
-    hot: true,
+    // hot: true,
     compress: true,
     port: 3100,
     historyApiFallback: true,
-    contentBase: path.resolve(__dirname),
-    publicPath: '/build/',
-    stats: {
-      modules: false,
-      chunks: false
-    }
+    // contentBase: path.resolve(__dirname),
+    publicPath: '/build/'
+    // stats: {
+    //   modules: false,
+    //   chunks: false
+    // }
   }
 }

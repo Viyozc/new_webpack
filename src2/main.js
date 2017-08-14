@@ -1,6 +1,8 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { createStore, applyMiddleware } from 'redux'
+import { Router } from 'react-router-dom'
+import { syncHistoryWithStore } from 'react-router-redux'
+
 import { Provider } from 'react-redux'
 import { composeWithDevTools } from 'redux-devtools-extension'
 import thunk from 'redux-thunk'
@@ -9,9 +11,13 @@ import { AppContainer } from 'react-hot-loader'
 import App from './App'
 import createHistory from 'history/createBrowserHistory'
 import rootReducer from './reducers/index'
-
+import configStore from './configStore'
+import {router} from './utils'
+import reducers from 'reducers'
+import routes from './routes'
 var FastClick = require('fastclick')
 
+let store = configStore(reducers)
 // 按模块导入lodash，可以有效减小vendor.js的大小
 import isEmpty from 'lodash/isEmpty'
 import isEqual from 'lodash/isEqual'
@@ -22,28 +28,25 @@ window.isEmpty = isEmpty
 window.isEqual = isEqual
 window.debounce = debounce
 window.isArray = isArray
-
-const history = createHistory()
-const middleware = routerMiddleware(history)
+window.store = store
 
 // 解决移动端300毫秒延迟
 FastClick.attach(document.body)
-const middlewares = [thunk, middleware]
-
-const store = createStore(rootReducer, composeWithDevTools(applyMiddleware(...middlewares)))
-
+let history = syncHistoryWithStore(router, store)
 const render = Component =>
     ReactDOM.render(
       <AppContainer>
         <Provider store={store}>
-          <Component />
+          <Router history={history} routes={routes}>
+            <Component />
+          </Router>
         </Provider>
       </AppContainer>,
-        document.getElementById('root')
-    )
+    document.getElementById('container')
+)
 
 render(App)
 
-if (module.hot) {
-  module.hot.accept('./App', () => { render(App) })
-}
+// if (module.hot) {
+//   module.hot.accept('./App', () => { render(App) })
+// }
