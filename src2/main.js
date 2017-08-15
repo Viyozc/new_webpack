@@ -6,6 +6,7 @@ import configureStore from 'configStore'
 import AppContainer from 'App.js'
 import createHistory from 'history/createBrowserHistory'
 import Test from './test/app'
+import Home from 'containers/Home/HomeContainer'
 require('es6-promise').polyfill()
 require('isomorphic-fetch')
 const router = createHistory()
@@ -27,7 +28,7 @@ const render = (Component) => {
       () => {}
     )
 }
-render(AppContainer)
+render(Home)
 
 // import React from 'react'
 // import ReactDOM from 'react-dom'

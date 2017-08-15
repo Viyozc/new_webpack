@@ -8,15 +8,15 @@ export default class AppContainer extends Component {
   }
   render () {
     return <div>
-      {/* <Route render={(props) => { */}
-      <Switch>
-        {
+      <Route render={(props) => {
+        return <Switch>
+          {
             ROUTES.map(
                 (item, i) => <Route key={i} exact path={item.path} component={item.page} />
             )
             }
-      </Switch>
-      {/* }} /> */}
+        </Switch>
+      }} />
     </div>
   }
 }
